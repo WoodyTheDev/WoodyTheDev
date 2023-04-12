@@ -1,0 +1,386 @@
+/**************************************************************
+* Navbar
+**************************************************************/
+
+nav {
+	position: fixed;
+	background: rgba(1, 154, 171, 0.5);
+	@-moz-document url-prefix() {
+		background: rgba(69, 142, 161, 0.5);
+	}
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: calc(100% - var(--scrollbar-width));
+	transition: background 0.5s ease-in;
+
+	&.open {
+		background: rgba(1, 154, 171, 0.9);
+		@-moz-document url-prefix() {
+			background: rgba(69, 142, 161, 0.9);
+		}
+	}
+
+	@media only screen and (max-height: 100px) and (orientation: landscape) {
+		display: none;
+	}
+
+	#navbar-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.8rem 1.6rem;
+		@media only screen and (min-width: 481px) {
+			/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+			padding: 0.8rem 2.4rem;
+		}
+		@media only screen and (min-width: 1281px) {
+			/* hi-res laptops and desktops */
+			justify-content: space-around;
+			padding: 0.8rem 1.6rem;
+		}
+		.navbar-link {
+			&:hover {
+				color: #ffffff;
+			}
+		}
+
+		/**************************************************************
+		* Navbar Content Left
+		**************************************************************/
+		#navbar-content-left {
+			display: flex;
+			align-items: center;
+
+			.link-home {
+				font-size: 2.4rem;
+			}
+
+			#navbar-parting-line {
+				width: 2px;
+				height: 1.9rem;
+				background-color: var(--white-font);
+				margin: 0 10px;
+			}
+
+			#lang-btn {
+				position: relative;
+				font-size: 1.6rem;
+				font-family: "notosanslepcha regular";
+				text-align: center;
+				width: 2.8rem;
+
+				&.border-language {
+					border: 1px solid var(--white-font);
+				}
+
+				&.open {
+					border-color: #ffffff;
+					color: #ffffff;
+				}
+
+				&:hover {
+					border-color: #ffffff;
+					color: #ffffff;
+					cursor: pointer;
+				}
+			}
+
+			#drop-lang-list {
+				opacity: 0;
+				background: rgba(1, 154, 171, 0.9);
+				@-moz-document url-prefix() {
+					background: rgba(69, 142, 161, 0.9);
+				}
+				position: absolute;
+				z-index: 1;
+				transform: translateY(-150%);
+				left: -0.25rem;
+				top: 100%;
+
+				@keyframes drop-lang-list-appear {
+					0% {
+						transform: translateY(-150%);
+						opacity: 0;
+					}
+					100% {
+						transform: translateY(1);
+						opacity: 1;
+					}
+				}
+				@keyframes drop-lang-list-disappear {
+					0% {
+						transform: translateY(0);
+						opacity: 1;
+					}
+					100% {
+						transform: translateY(-150%);
+						opacity: 0;
+					}
+				}
+
+				&.appear {
+					animation: menu-list-appear 1s ease-in;
+					transform: translateY(0);
+					opacity: 1;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+
+				&.disappear {
+					animation: menu-list-disappear 1s ease-in;
+					transform: translateY(-150%);
+					opacity: 1;
+				}
+			}
+
+			#drop-lang-list button {
+				font-family: "notosanslepcha regular";
+				background-color: transparent;
+				font-size: 1.6rem;
+				color: var(--white-font);
+				&:not(:first-child) {
+					margin-top: 5px;
+				}
+				&:hover {
+					// border-color: #7ff9da;
+					// color: #7ff9da;
+					border-color: white;
+					color: white;
+					cursor: pointer;
+				}
+			}
+
+			.border-language {
+				border: 1px solid #ffffff;
+				border-radius: 5px;
+				padding: 5px;
+			}
+		}
+
+		/**************************************************************
+		* Navbar Content Right
+		**************************************************************/
+		#navbar-content-right {
+			font-family: "notosanslepcha regular";
+			display: flex;
+			align-items: flex-end;
+			a {
+				display: none;
+			}
+			#menu-btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				width: 32px;
+				height: 32px;
+				cursor: pointer;
+				transition: all 0.5s ease-in-out;
+
+				/* Animation */
+				&.open #menu-btn-burger {
+					transform: translateX(-50px);
+					background: transparent;
+				}
+				&.open #menu-btn-burger::before {
+					transform: rotate(45deg) translate(35px, -35px);
+				}
+				&.open #menu-btn-burger::after {
+					transform: rotate(-45deg) translate(35px, 35px);
+				}
+			}
+			#menu-btn-burger,
+			#menu-btn-burger::before,
+			#menu-btn-burger::after {
+				background: var(--white-font);
+				border-radius: 5px;
+				transition: all 0.5s ease-in-out;
+				width: 32px;
+				height: 3px;
+			}
+			#menu-btn-burger::before,
+			#menu-btn-burger::after {
+				content: "";
+				position: absolute;
+			}
+			#menu-btn-burger::before {
+				transform: translateY(-8px);
+			}
+			#menu-btn-burger::after {
+				transform: translateY(8px);
+			}
+			@media only screen and (min-width: 1281px) {
+				/* hi-res laptops and desktops */
+				#menu-btn {
+					display: none;
+				}
+				a {
+					display: inline;
+					font-size: 1.6rem;
+					margin-left: 8px;
+					margin-right: 8px;
+					line-height: 2rem;
+				}
+				a.icon {
+					margin-left: 6px;
+					margin-right: 6px;
+				}
+				.icon-logo {
+					width: 2.3rem;
+					height: 2.3rem;
+				}
+			}
+		}
+	}
+}
+
+/**************************************************************
+* Menu Content
+**************************************************************/
+
+#menu-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 5px;
+	grid-template-areas:
+		"about about"
+		"skills skills"
+		"projects projects"
+		"contact contact"
+		"github github";
+	#menu-about {
+		grid-area: about;
+	}
+	#menu-skills {
+		grid-area: skills;
+	}
+	#menu-projects {
+		grid-area: projects;
+	}
+	#menu-contact {
+		grid-area: contact;
+	}
+	#menu-linkedin {
+		grid-area: linkedin;
+	}
+	#menu-github {
+		grid-area: github;
+	}
+	position: absolute;
+	opacity: 0;
+	z-index: 2;
+	width: 40%;
+	left: 57%;
+	top: 0;
+	background: rgba(1, 154, 171, 0.5);
+	@-moz-document url-prefix() {
+		background: rgba(69, 142, 161, 0.5);
+	}
+	transition: background 0.5s ease-in;
+	transform: translateY(-150%);
+
+	@keyframes menu-list-appear {
+		0% {
+			transform: translateY(-150%);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(1);
+			opacity: 1;
+		}
+	}
+	@keyframes menu-list-disappear {
+		0% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(-150%);
+			opacity: 0;
+		}
+	}
+	&.open {
+		animation: menu-list-appear 1s ease-in;
+		transform: translateY(0);
+		opacity: 1;
+		background: rgba(1, 154, 171, 0.9);
+		@-moz-document url-prefix() {
+			background: rgba(69, 142, 161, 0.9);
+		}
+	}
+
+	&.closed {
+		animation: menu-list-disappear 1s ease-in;
+		transform: translateY(-90%);
+		opacity: 0;
+	}
+
+	@media only screen and (max-width: 640px) {
+		left: 0;
+		width: calc(100% - var(--scrollbar-width));
+	}
+
+	.menu-item {
+		border: 1px solid #ffffff;
+		border-radius: 5px;
+		font-size: 2.4rem;
+		padding: 0.5rem 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.icon-logo {
+			width: 3.2rem;
+			height: 3.2rem;
+			margin-right: 1rem;
+		}
+		&:hover {
+			border-color: #ffffff;
+			color: #ffffff;
+			.icon-github {
+				background-color: #ffffff;
+			}
+		}
+		&:focus {
+			background-color: #7ff9da;
+		}
+		@media only screen and (min-width: 481px) {
+			/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+			font-size: 2.5rem;
+			padding: 0.6rem 0;
+		}
+		@media only screen and (min-width: 641px) {
+			/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+			font-size: 2.7rem;
+			padding: 0.6rem 0;
+			.icon-logo {
+				width: 3.3rem;
+				height: 3.3rem;
+			}
+		}
+		@media only screen and (min-width: 961px) {
+			/* tablet, landscape iPad, lo-res laptops ands desktops */
+			font-size: 2.9rem;
+			padding: 0.7rem 0;
+			.icon-logo {
+				width: 3.4rem;
+				height: 3.4rem;
+			}
+		}
+		@media only screen and (min-width: 1025px) {
+			/* big landscape tablets, laptops, and desktops */
+			font-size: 3rem;
+			padding: 0.7rem 0;
+			.icon-logo {
+				width: 3.5rem;
+				height: 3.5rem;
+			}
+		}
+		@media only screen and (max-height: 510px) and (orientation: landscape) {
+			font-size: 2rem;
+			padding: 0.5rem 0;
+		}
+	}
+}

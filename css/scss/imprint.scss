@@ -1,0 +1,248 @@
+:root {
+	--white-font: #d9dbea;
+	--scrollbar-width: 0.5rem;
+}
+
+@font-face {
+	font-family: "cabin regular";
+	src: url("../fonts/Cabin-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "notosanslepcha regular";
+	src: url("../fonts/NotoSansLepcha-Regular.ttf") format("truetype");
+}
+
+html {
+	font-size: 62.5%;
+	color: var(--white-font);
+	a {
+		color: var(--white-font);
+		text-decoration: none;
+	}
+}
+
+body {
+	margin: 0;
+}
+
+.icon-github {
+	background-color: white;
+	-webkit-mask: url("../img/GitHub-Logos/github.svg") no-repeat center;
+	mask: url("../img/GitHub-Logos/github.svg") no-repeat center;
+}
+
+.icon-woody-the-dev {
+	background-color: white;
+	-webkit-mask: url("../img/icons/woody-the-dev.svg") no-repeat center;
+	mask: url("../img/icons/woody-the-dev.svg") no-repeat center;
+}
+
+#imprint {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 18rem);
+	min-height: 770px;
+	overflow: auto;
+	h2 {
+		text-align: center;
+	}
+	.content-text {
+		text-align: center;
+	}
+}
+
+.imprint {
+	height: auto;
+	min-height: 850px;
+	overflow: hidden;
+}
+
+.darkblue {
+	background-color: #243d51;
+}
+
+h1 {
+	font-family: "cabin regular", "Tahoma", sans-serif;
+	color: #31d6ff;
+	font-size: 3rem;
+	margin: 0;
+	@media only screen and (min-width: 481px) {
+		/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+		font-size: 3.1rem;
+	}
+	@media only screen and (min-width: 641px) {
+		/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+		font-size: 3.3rem;
+	}
+	@media only screen and (min-width: 961px) {
+		/* tablet, landscape iPad, lo-res laptops ands desktops */
+		font-size: 3.6rem;
+	}
+	@media only screen and (min-width: 1025px) {
+		/* big landscape tablets, laptops, and desktops */
+		font-size: 3.8rem;
+	}
+	// @media only screen and (min-width: 1281px) {
+	// 	/* hi-res laptops and desktops */
+	// 	font-size: 4rem;
+	// }
+	@media only screen and (max-height: 510px) and (orientation: landscape) {
+		font-size: 2.3rem;
+	}
+}
+
+h2 {
+	font-family: "cabin regular", "Tahoma", sans-serif;
+	font-size: 2rem;
+	margin: 0.8rem 0;
+	@media only screen and (min-width: 481px) {
+		/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+		font-size: 2.5rem;
+	}
+	@media only screen and (min-width: 641px) {
+		/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+		font-size: 2.6rem;
+		margin: 0.9rem 0;
+	}
+	@media only screen and (min-width: 961px) {
+		/* tablet, landscape iPad, lo-res laptops ands desktops */
+		font-size: 2.9rem;
+		margin: 1rem 0;
+	}
+	@media only screen and (min-width: 1025px) {
+		/* big landscape tablets, laptops, and desktops */
+		font-size: 3rem;
+		margin: 1.1rem 0;
+	}
+	@media only screen and (min-width: 1281px) {
+		/* hi-res laptops and desktops */
+		font-size: 3.2rem;
+		margin: 1.2rem 0;
+	}
+	@media only screen and (max-height: 510px) and (orientation: landscape) {
+		font-size: 1.8rem;
+	}
+}
+
+.content-text {
+	font-family: "notosanslepcha regular", sans-serif;
+	font-size: 1.7rem;
+	@media only screen and (min-width: 481px) {
+		/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+		font-size: 2rem;
+	}
+	@media only screen and (max-height: 510px) and (orientation: landscape) {
+		font-size: 1.7rem;
+	}
+	// @media only screen and (min-width:481px)  {
+	// 	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+	// 	font-size: 1.5rem;
+	// }
+	// @media only screen and (min-width:641px)  {
+	// 	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+	// 	font-size: 1.6rem;
+	// }
+	// @media only screen and (min-width:961px)  {
+	// 	/* tablet, landscape iPad, lo-res laptops ands desktops */
+	// 	font-size: 1.8rem;
+	// }
+	// @media only screen and (min-width:1025px) {
+	// 	/* big landscape tablets, laptops, and desktops */
+	// 	font-size: 1.9rem;
+	// }
+	// @media only screen and (min-width:1281px) {
+	// 	/* hi-res laptops and desktops */
+	// 	font-size: 2rem;
+	// }
+}
+
+footer {
+	height: 18rem;
+	width: 100%;
+	background-color: #162635;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	#footer-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		#footer-top {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.horinzontal-line {
+				width: 31%;
+				height: 1px;
+				background-color: var(--white-font);
+			}
+			#imprint-link {
+				font-size: 1.5rem;
+				margin: 0 2.4rem;
+				&:hover {
+					color: #ffffff;
+				}
+			}
+		}
+
+		#footer-mid {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			.link-home {
+				font-size: 2rem;
+				&:hover {
+					color: #ffffff;
+				}
+			}
+			.icon {
+				margin: 1.8rem 4rem;
+			}
+
+			.icon-logo {
+				width: 3.4rem;
+				height: 3.4rem;
+			}
+		}
+
+		#footer-bottom {
+			#copyright-text {
+				font-size: 1.3rem;
+			}
+		}
+		@media only screen and (min-width: 481px) {
+			/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+			#footer-top {
+				justify-content: space-around;
+				.horinzontal-line {
+					width: 50%;
+				}
+				#imprint-link {
+					font-size: 1.8rem;
+					margin: 0 2.4rem;
+				}
+			}
+			#footer-mid {
+				.link-home {
+					font-size: 2.4rem;
+				}
+				.icon {
+					margin: 1.8rem 4.8rem;
+				}
+			}
+			#footer-bottom {
+				#copyright-text {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+	.scroll-snap {
+		scroll-snap-align: end;
+	}
+}
