@@ -243,15 +243,14 @@ iframe {
   opacity: 0;
 }
 
+.scroll-snap {
+  scroll-snap-align: start;
+  flex: none;
+}
+
 main {
   max-height: 100vh;
   overflow-x: hidden;
-  /**************************************************************
-  * Home
-  **************************************************************/
-  /**************************************************************
-  * Content
-  **************************************************************/
 }
 main.scroll-snap-container {
   scroll-snap-type: y proximity;
@@ -264,18 +263,29 @@ main.scroll-snap-container {
     scroll-snap-type: none;
   }
 }
-main .scroll-snap {
-  scroll-snap-align: start;
-  flex: none;
-}
+
+/**************************************************************
+* Home
+**************************************************************/
 @-moz-document url-prefix() {
-  main .home-placeholder {
+  .home-placeholder {
     height: 1px;
     width: 100%;
     background: rgb(69, 142, 161);
   }
 }
-main #home {
+
+#home-title-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 25%;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  font-family: "cabin regular";
+}
+
+#home {
   height: 100vh;
   width: 100%;
   position: -webkit-sticky;
@@ -288,239 +298,234 @@ main #home {
   background-image: url("../img/Startsite/Startsite.jpg");
 }
 @media only screen and (max-width: 7680px) {
-  main #home {
+  #home {
     /* 8k */
     background-image: url("../img/Startsite/Startsite-desktop-7680.webp");
   }
 }
 @media only screen and (max-height: 2160px) {
-  main #home {
+  #home {
     /* 4k */
     background-image: url("../img/Startsite/Startsite-desktop-3840.webp");
   }
 }
 @media only screen and (max-height: 1440px) {
-  main #home {
+  #home {
     /* 1440p */
     background-image: url("../img/Startsite/Startsite-desktop-2560.webp");
   }
 }
 @media only screen and (max-height: 1280px) {
-  main #home {
+  #home {
     /* 1080p */
     background-image: image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
   }
 }
 @media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
-  main #home {
+  #home {
     /* smartphones, iPhone, portrait 480x320 phones */
     background-image: image-set(url("../img/Startsite/Startsite-portrait-375.webp") 1x, url("../img/Startsite/Startsite-portrait-375-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-375.webp") 1x, url("../img/Startsite/Startsite-portrait-375-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
-  main #home {
+  #home {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     background-image: image-set(url("../img/Startsite/Startsite-portrait-480.webp") 1x, url("../img/Startsite/Startsite-portrait-480-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-480.webp") 1x, url("../img/Startsite/Startsite-portrait-480-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
-  main #home {
+  #home {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     background-image: image-set(url("../img/Startsite/Startsite-portrait-768.webp") 1x, url("../img/Startsite/Startsite-portrait-768-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-768.webp") 1x, url("../img/Startsite/Startsite-portrait-768-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
-  main #home {
+  #home {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     background-image: image-set(url("../img/Startsite/Startsite-portrait-1280.webp") 1x, url("../img/Startsite/Startsite-portrait-1280-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-1280.webp") 1x, url("../img/Startsite/Startsite-portrait-1280-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
-  main #home {
+  #home {
     background-image: image-set(url("../img/Startsite/Startsite-landscape-667.webp") 1x, url("../img/Startsite/Startsite-landscape-667-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-667.webp") 1x, url("../img/Startsite/Startsite-landscape-667-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
-  main #home {
+  #home {
     background-image: image-set(url("../img/Startsite/Startsite-landscape-800.webp") 1x, url("../img/Startsite/Startsite-landscape-800-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-800.webp") 1x, url("../img/Startsite/Startsite-landscape-800-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* big landscape tablets, laptops, and desktops */
     background-image: image-set(url("../img/Startsite/Startsite-desktop-1280.webp") 1x, url("../img/Startsite/Startsite-desktop-2560.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-desktop-1280.webp") 1x, url("../img/Startsite/Startsite-desktop-2560.webp") 2x);
   }
 }
 @media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* hi-res laptops and desktops */
     background-image: image-set(url("../img/Startsite/Startsite-landscape-1366.webp") 1x, url("../img/Startsite/Startsite-landscape-1366-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-1366.webp") 1x, url("../img/Startsite/Startsite-landscape-1366-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* tablets landscape */
     background-image: image-set(url("../img/Startsite/Startsite-landscape-1707.webp") 1x, url("../img/Startsite/Startsite-landscape-1707-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-1707.webp") 1x, url("../img/Startsite/Startsite-landscape-1707-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* 1080p */
     background-image: image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
     background-image: -webkit-image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
   }
 }
 @media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* 1440p */
     background-image: url("../img/Startsite/Startsite-desktop-2560.webp");
   }
 }
 @media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* 4k */
     background-image: url("../img/Startsite/Startsite-desktop-3840.webp");
   }
 }
 @media only screen and (min-width: 3841px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* Ultra-wide-screens */
     background-image: url("../img/Startsite/Startsite-super-wide-5120.webp");
   }
 }
 @media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
-  main #home {
+  #home {
     /* 8k */
     background-image: url("../img/Startsite/Startsite-desktop-7680.webp");
   }
 }
-main #home #home-title-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 25%;
-  justify-content: center;
-  align-items: center;
-  height: 75vh;
-  font-family: "cabin regular";
-}
-main #home .home-title {
+#home .home-title {
   font-size: 3rem;
 }
-main #home .middle {
+#home .middle {
   font-size: 2.5rem;
 }
-main #home .small {
+#home .small {
   font-size: 1.2rem;
   font-family: sans-serif;
 }
 @media only screen and (min-width: 320px) {
-  main #home .home-title {
+  #home .home-title {
     font-size: 4rem;
   }
-  main #home .middle {
+  #home .middle {
     font-size: 3.3rem;
   }
-  main #home .small {
+  #home .small {
     font-size: 1.6rem;
     font-family: sans-serif;
   }
 }
 @media only screen and (min-width: 481px) {
-  main #home {
+  #home {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
   }
-  main #home .home-title {
+  #home .home-title {
     font-size: 4.8rem;
   }
-  main #home .small {
+  #home .small {
     font-size: 1.8rem;
   }
-  main #home .middle {
+  #home .middle {
     font-size: 4rem;
   }
 }
 @media only screen and (min-width: 641px) {
-  main #home {
+  #home {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
   }
-  main #home .home-title {
+  #home .home-title {
     font-size: 5.6rem;
   }
-  main #home .small {
+  #home .small {
     font-size: 2rem;
   }
-  main #home .middle {
+  #home .middle {
     font-size: 4.6rem;
   }
 }
 @media only screen and (min-width: 961px) {
-  main #home {
+  #home {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
   }
-  main #home .home-title {
+  #home .home-title {
     font-size: 6.4rem;
   }
-  main #home .small {
+  #home .small {
     font-size: 2.2rem;
   }
-  main #home .middle {
+  #home .middle {
     font-size: 5.3rem;
   }
 }
 @media only screen and (min-width: 1025px) {
-  main #home {
+  #home {
     /* big landscape tablets, laptops, and desktops */
   }
-  main #home .home-title {
+  #home .home-title {
     font-size: 7.2rem;
   }
-  main #home .small {
+  #home .small {
     font-size: 2.4rem;
   }
-  main #home .middle {
+  #home .middle {
     font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1281px) {
-  main #home {
+  #home {
     /* hi-res laptops and desktops */
   }
-  main #home .home-title {
+  #home .home-title {
     font-size: 7.2rem;
   }
-  main #home .small {
+  #home .small {
     font-size: 2.6rem;
   }
-  main #home .middle {
+  #home .middle {
     font-size: 6rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main #home .home-title {
+  #home .home-title {
     font-size: 4rem;
   }
-  main #home .small {
+  #home .small {
     font-size: 1.6rem;
   }
-  main #home .middle {
+  #home .middle {
     font-size: 3.3rem;
   }
 }
-main .content {
+
+/**************************************************************
+* Content
+**************************************************************/
+.content {
   height: 100vh;
   width: 100%;
 }
-main .content .content-full-width {
+.content .content-full-width {
   height: 100vh;
   width: 80%;
   display: flex;
@@ -528,96 +533,96 @@ main .content .content-full-width {
   align-items: center;
 }
 @media only screen and (max-height: 480px) and (orientation: landscape) {
-  main .content .content-full-width {
+  .content .content-full-width {
     width: 80%;
   }
 }
 @media only screen and (max-width: 1280px) and (orientation: portrait) {
-  main .content .content-full-width {
+  .content .content-full-width {
     width: 100vw;
     flex-direction: column;
   }
 }
-main .content .content-full-width .text-container {
+.content .content-full-width .text-container {
   display: flex;
   flex-direction: column;
   height: 45vh;
   width: 70%;
 }
 @media only screen and (max-width: 1280px) and (orientation: portrait), only screen and (max-height: 480px) and (orientation: landscape) {
-  main .content .content-full-width .text-container {
+  .content .content-full-width .text-container {
     height: 42svh;
   }
-  main .content .content-full-width .text-container.programming-languages {
+  .content .content-full-width .text-container.programming-languages {
     width: 75%;
     justify-content: center;
   }
 }
-main .content .content-full-width .chart {
+.content .content-full-width .chart {
   height: 45vh;
   width: 30%;
   margin-right: 4rem;
 }
 @media only screen and (max-height: 480px) and (orientation: landscape) {
-  main .content .content-full-width .chart {
+  .content .content-full-width .chart {
     margin-right: 0rem;
     padding-right: 1rem;
   }
 }
 @media only screen and (max-width: 1280px) and (orientation: portrait) {
-  main .content .content-full-width .chart {
+  .content .content-full-width .chart {
     width: 60%;
     margin-right: 0;
     height: 40svh;
   }
 }
-main .content .content-full-width .bulletpoints-container {
+.content .content-full-width .bulletpoints-container {
   height: 100%;
   margin-top: 2rem;
   overflow: hidden;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoint-title {
+.content .content-full-width .bulletpoints-container .bulletpoint-title {
   display: flex;
   white-space: nowrap;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoint-title .icon-logo {
+.content .content-full-width .bulletpoints-container .bulletpoint-title .icon-logo {
   min-width: 2.3rem;
   min-height: 2.3rem;
   margin-right: 1rem;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
+.content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
   height: 45%;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row {
+.content .content-full-width .bulletpoints-container .bulletpoints-row {
   display: flex;
   width: 100%;
   height: 55%;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-1 {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-1 {
   color: rgb(75, 192, 192);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-1 .icon-logo {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-1 .icon-logo {
   background-color: rgb(75, 192, 192);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-2 {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-2 {
   color: rgb(69, 184, 202);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-2 .icon-logo {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-2 .icon-logo {
   background-color: rgb(69, 184, 202);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-3 {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-3 {
   color: rgb(61, 173, 218);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-3 .icon-logo {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-3 .icon-logo {
   background-color: rgb(61, 173, 218);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-4 {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-4 {
   color: rgb(54, 162, 235);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .blue-4 .icon-logo {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-4 .icon-logo {
   background-color: rgb(54, 162, 235);
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -625,126 +630,126 @@ main .content .content-full-width .bulletpoints-container .bulletpoints-row .bul
   opacity: 0.2;
   margin-right: 3rem;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet.active {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet.active {
   opacity: 1;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet p {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet p {
   margin: 0;
 }
-main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
   max-height: 100%;
   font-size: 1.6rem;
 }
-main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
   height: 33.3%;
   padding-bottom: 1rem;
 }
-main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row:last-child {
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row:last-child {
   padding-bottom: 0;
 }
-main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
   opacity: 1;
 }
-main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet .bulletpoint-title {
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet .bulletpoint-title {
   font-size: 1.7rem;
 }
-main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
   font-size: 1.5rem;
 }
 @media only screen and (max-width: 1280px) and (orientation: portrait) {
-  main .content .content-full-width .bulletpoints-container {
+  .content .content-full-width .bulletpoints-container {
     display: flex;
     margin-top: 0;
     overflow-x: auto;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row {
     height: 100%;
     width: fit-content;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
     height: 100%;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title {
     font-size: 1.8rem;
     width: 100%;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
     opacity: 1;
     width: fit-content;
     margin-right: 1rem;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
     font-size: 1.3rem;
   }
-  main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container {
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container {
     height: auto;
   }
-  main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
     height: auto;
     padding-bottom: 0;
   }
-  main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
     width: 25rem;
   }
 }
 @media only screen and (max-height: 480px) and (orientation: landscape) {
-  main .content .content-full-width .bulletpoints-container {
+  .content .content-full-width .bulletpoints-container {
     display: flex;
     margin-top: 0;
     overflow-x: auto;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row {
     height: 100%;
     width: fit-content;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
     height: 100%;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title {
     font-size: 1.8rem;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title p {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title p {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
     opacity: 1;
     width: fit-content;
     margin-right: 2rem;
     height: auto;
   }
-  main .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
     display: none;
   }
-  main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container {
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container {
     height: auto;
   }
-  main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
     height: auto;
     padding-bottom: 0;
   }
-  main .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
     width: 25rem;
   }
 }
-main .content .content-split-image {
+.content .content-split-image {
   height: 100%;
   width: 50%;
 }
-main .content .content-split-image .content-image {
+.content .content-split-image .content-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
   pointer-events: none;
 }
-main .content .content-split-text {
+.content .content-split-text {
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .content .content-split-chart {
+.content .content-split-chart {
   font-size: 1.7rem;
   height: 100vh;
   width: 50%;
@@ -753,21 +758,21 @@ main .content .content-split-chart {
   justify-content: center;
   align-items: center;
 }
-main .content .content-split-chart #skills-chart {
+.content .content-split-chart #skills-chart {
   width: 100%;
 }
 @media only screen and (min-width: 481px) {
-  main .content .content-split-chart {
+  .content .content-split-chart {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     font-size: 2rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content .content-split-chart {
+  .content .content-split-chart {
     font-size: 1.7rem;
   }
 }
-main .content .content-split-form {
+.content .content-split-form {
   font-size: 1.7rem;
   display: flex;
   flex-direction: column;
@@ -776,83 +781,83 @@ main .content .content-split-form {
   height: 100vh;
   width: 100%;
 }
-main .content .content-split-form .content-container {
+.content .content-split-form .content-container {
   position: relative;
 }
-main .content .content-split-form .content-container .text-success-margin {
+.content .content-split-form .content-container .text-success-margin {
   margin-top: 1.4rem;
 }
 @media only screen and (min-width: 481px) {
-  main .content .content-split-form {
+  .content .content-split-form {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     font-size: 2rem;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .content .content-split-form {
+  .content .content-split-form {
     width: 50%;
     flex-direction: row;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content .content-split-form {
+  .content .content-split-form {
     font-size: 1.7rem;
   }
 }
-main .content .content-split-form #email-form {
+.content .content-split-form #email-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.8rem;
 }
-main .content .content-split-form #email-form #form-name {
+.content .content-split-form #email-form #form-name {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
 }
-main .content .content-split-form #email-form #form-email {
+.content .content-split-form #email-form #form-email {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 1;
 }
-main .content .content-split-form #email-form #form-subject {
+.content .content-split-form #email-form #form-subject {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 2;
 }
-main .content .content-split-form #email-form #form-message {
+.content .content-split-form #email-form #form-message {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 3;
 }
-main .content .content-split-form #email-form #form-submit {
+.content .content-split-form #email-form #form-submit {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 4;
 }
-main .content .content-split-form #email-form input {
+.content .content-split-form #email-form input {
   height: 3rem;
 }
-main .content .content-split-form #email-form #form-name:-webkit-autofill {
+.content .content-split-form #email-form #form-name:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #243d51 inset;
   -webkit-text-fill-color: var(--white-font);
 }
-main .content .content-split-form #email-form #form-email:-webkit-autofill {
+.content .content-split-form #email-form #form-email:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #243d51 inset;
   -webkit-text-fill-color: var(--white-font);
 }
-main .content .content-split-form #email-form textarea {
+.content .content-split-form #email-form textarea {
   height: 9.6rem;
   min-height: 9.6rem;
   max-height: 30vh;
   resize: vertical;
 }
-main .content .content-split-form #email-form input,
-main .content .content-split-form #email-form textarea {
+.content .content-split-form #email-form input,
+.content .content-split-form #email-form textarea {
   width: 100%;
   padding: 0.8rem 0.8rem;
   box-sizing: border-box;
@@ -862,28 +867,28 @@ main .content .content-split-form #email-form textarea {
   color: var(--white-font);
   font-size: 2rem;
 }
-main .content .content-split-form #email-form input:hover,
-main .content .content-split-form #email-form textarea:hover {
+.content .content-split-form #email-form input:hover,
+.content .content-split-form #email-form textarea:hover {
   border: 1px solid #019aab;
 }
-main .content .content-split-form #email-form input:focus,
-main .content .content-split-form #email-form textarea:focus {
+.content .content-split-form #email-form input:focus,
+.content .content-split-form #email-form textarea:focus {
   border: 1px solid #019aab;
   outline: 1px solid #019aab;
 }
-main .content .content-split-form #email-form input::placeholder,
-main .content .content-split-form #email-form textarea::placeholder {
+.content .content-split-form #email-form input::placeholder,
+.content .content-split-form #email-form textarea::placeholder {
   color: var(--white-font);
 }
-main .content .content-split-form #email-form input:hover::placeholder,
-main .content .content-split-form #email-form textarea:hover::placeholder {
+.content .content-split-form #email-form input:hover::placeholder,
+.content .content-split-form #email-form textarea:hover::placeholder {
   color: #019aab;
 }
-main .content .content-split-form #email-form input:focus::placeholder,
-main .content .content-split-form #email-form textarea:focus::placeholder {
+.content .content-split-form #email-form input:focus::placeholder,
+.content .content-split-form #email-form textarea:focus::placeholder {
   color: #019aab;
 }
-main .content .content-split-form #email-form button {
+.content .content-split-form #email-form button {
   padding: 0.8rem;
   border-radius: 4px;
   background-color: transparent;
@@ -892,96 +897,96 @@ main .content .content-split-form #email-form button {
   font-weight: bold;
   color: var(--white-font);
 }
-main .content .content-split-form #email-form button:hover {
+.content .content-split-form #email-form button:hover {
   border: 2px solid #019aab;
   color: #019aab;
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content .content-split-form #email-form input {
+  .content .content-split-form #email-form input {
     height: 2rem;
   }
-  main .content .content-split-form #email-form textarea {
+  .content .content-split-form #email-form textarea {
     height: 2rem;
     min-height: 2rem;
     max-height: 2vh;
     resize: vertical;
   }
-  main .content .content-split-form #email-form input,
-main .content .content-split-form #email-form textarea {
+  .content .content-split-form #email-form input,
+.content .content-split-form #email-form textarea {
     font-size: 1.4rem;
     padding: 0rem 0.6rem;
   }
-  main .content .content-split-form #email-form button {
+  .content .content-split-form #email-form button {
     font-size: 1.4rem;
     padding: 0;
   }
 }
-main .content .content-split-form .text-animation-1,
-main .content .content-split-form .text-animation-2,
-main .content .content-split-form .text-animation-3 {
+.content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
   top: 3.6rem;
 }
 @media only screen and (min-width: 481px) {
-  main .content .content-split-form .text-animation-1,
-main .content .content-split-form .text-animation-2,
-main .content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     top: 4rem;
   }
 }
 @media only screen and (min-width: 641px) {
-  main .content .content-split-form .text-animation-1,
-main .content .content-split-form .text-animation-2,
-main .content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     top: 4rem;
   }
 }
 @media only screen and (min-width: 961px) {
-  main .content .content-split-form .text-animation-1,
-main .content .content-split-form .text-animation-2,
-main .content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     top: 4.5rem;
   }
 }
 @media only screen and (min-width: 1025px) {
-  main .content .content-split-form .text-animation-1,
-main .content .content-split-form .text-animation-2,
-main .content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* big landscape tablets, laptops, and desktops */
     top: 4.5rem;
   }
 }
 @media only screen and (min-width: 1281px) {
-  main .content .content-split-form .text-animation-1,
-main .content .content-split-form .text-animation-2,
-main .content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* hi-res laptops and desktops */
     top: 4.8rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content .content-split-form .text-animation-1,
-main .content .content-split-form .text-animation-2,
-main .content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     top: 2.4rem;
   }
 }
-main .content .content-split-map {
+.content .content-split-map {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .content .content-split-map #gmap_canvas {
+.content .content-split-map #gmap_canvas {
   width: 100%;
   height: 100%;
   overflow: hidden;
   background: none !important;
 }
-main .content .content-split-map button {
+.content .content-split-map button {
   padding: 0.8rem;
   border-radius: 4px;
   background-color: transparent;
@@ -990,172 +995,172 @@ main .content .content-split-map button {
   font-weight: bold;
   color: var(--white-font);
 }
-main .content .content-split-map button:hover {
+.content .content-split-map button:hover {
   border: 2px solid #019aab;
   color: #019aab;
 }
 @media only screen and (min-width: 1280px) {
-  main .content .content-split-map {
+  .content .content-split-map {
     width: 50%;
   }
 }
-main .content .content-container {
+.content .content-container {
   max-width: 800px;
   width: 75%;
 }
-main .content h1 {
+.content h1 {
   font-family: "cabin regular", "Tahoma", sans-serif;
   color: #31d6ff;
   font-size: 3rem;
   margin: 0;
 }
 @media only screen and (min-width: 481px) {
-  main .content h1 {
+  .content h1 {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     font-size: 3.1rem;
   }
 }
 @media only screen and (min-width: 641px) {
-  main .content h1 {
+  .content h1 {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     font-size: 3.3rem;
   }
 }
 @media only screen and (min-width: 961px) {
-  main .content h1 {
+  .content h1 {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     font-size: 3.6rem;
   }
 }
 @media only screen and (min-width: 1025px) {
-  main .content h1 {
+  .content h1 {
     /* big landscape tablets, laptops, and desktops */
     font-size: 3.8rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content h1 {
+  .content h1 {
     font-size: 2.3rem;
   }
 }
-main .content h2 {
+.content h2 {
   font-family: "cabin regular", "Tahoma", sans-serif;
   font-size: 2rem;
   margin: 0.8rem 0;
 }
 @media only screen and (min-width: 481px) {
-  main .content h2 {
+  .content h2 {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     font-size: 2.5rem;
   }
 }
 @media only screen and (min-width: 641px) {
-  main .content h2 {
+  .content h2 {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     font-size: 2.6rem;
     margin: 0.9rem 0;
   }
 }
 @media only screen and (min-width: 961px) {
-  main .content h2 {
+  .content h2 {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     font-size: 2.9rem;
     margin: 1rem 0;
   }
 }
 @media only screen and (min-width: 1025px) {
-  main .content h2 {
+  .content h2 {
     /* big landscape tablets, laptops, and desktops */
     font-size: 3rem;
     margin: 1.1rem 0;
   }
 }
 @media only screen and (min-width: 1281px) {
-  main .content h2 {
+  .content h2 {
     /* hi-res laptops and desktops */
     font-size: 3.2rem;
     margin: 1.2rem 0;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content h2 {
+  .content h2 {
     font-size: 1.8rem;
     margin: 0;
   }
 }
-main .content .content-text {
+.content .content-text {
   font-family: "notosanslepcha regular", sans-serif;
   font-size: 1.7rem;
 }
 @media only screen and (min-width: 481px) {
-  main .content .content-text {
+  .content .content-text {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     font-size: 2rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content .content-text {
+  .content .content-text {
     font-size: 1.3rem;
   }
-  main .content .content-text p {
+  .content .content-text p {
     margin: 0;
   }
 }
-main .content .text-animation-wrapper {
+.content .text-animation-wrapper {
   white-space: nowrap;
 }
-main .content .text-animation-margin {
+.content .text-animation-margin {
   margin-top: 4rem;
 }
 @media only screen and (min-width: 481px) {
-  main .content .text-animation-margin {
+  .content .text-animation-margin {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     margin-top: 5rem;
   }
 }
 @media only screen and (min-width: 641px) {
-  main .content .text-animation-margin {
+  .content .text-animation-margin {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     margin-top: 5.2rem;
   }
 }
 @media only screen and (min-width: 961px) {
-  main .content .text-animation-margin {
+  .content .text-animation-margin {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     margin-top: 5.8rem;
   }
 }
 @media only screen and (min-width: 1025px) {
-  main .content .text-animation-margin {
+  .content .text-animation-margin {
     /* big landscape tablets, laptops, and desktops */
     margin-top: 6rem;
   }
 }
 @media only screen and (min-width: 1281px) {
-  main .content .text-animation-margin {
+  .content .text-animation-margin {
     /* hi-res laptops and desktops */
     margin-top: 6.4rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
-  main .content .text-animation-margin {
+  .content .text-animation-margin {
     margin-top: 2.4rem;
   }
-  main .content .text-animation-margin p {
+  .content .text-animation-margin p {
     margin-bottom: 0.5rem;
   }
 }
-main .content .text-animation-1 {
+.content .text-animation-1 {
   animation: text-animation-1 25s infinite;
   position: absolute;
   opacity: 0;
 }
-main .content .text-animation-2 {
+.content .text-animation-2 {
   animation: text-animation-2 25s infinite;
   position: absolute;
   opacity: 0;
 }
-main .content .text-animation-3 {
+.content .text-animation-3 {
   animation: text-animation-3 25s infinite;
   position: absolute;
   opacity: 0;
@@ -1194,42 +1199,45 @@ main .content .text-animation-3 {
   }
 }
 @media only screen and (max-width: 1280px) {
-  main .content.content-split {
+  .content.content-split {
     flex-direction: column;
     height: 200vh;
   }
-  main .content.content-split .content-split-image,
-main .content.content-split .content-split-chart {
+  .content.content-split .content-split-image,
+.content.content-split .content-split-chart {
     height: 50%;
     width: 100%;
   }
-  main .content.content-split .content-split-text {
+  .content.content-split .content-split-text {
     height: 50%;
     width: 100%;
   }
-  main .content.content-split .content-split-text .content-text-container {
+  .content.content-split .content-split-text .content-text-container {
     max-width: 70%;
     width: 100%;
     margin: 0;
   }
 }
 @media only screen and (min-width: 1281px) {
-  main .content.content-split .scroll-snap:nth-child(2) {
+  .content.content-split .scroll-snap:nth-child(2) {
     scroll-snap-align: none;
   }
 }
-main .lightblue {
+
+.lightblue {
   background-color: #019aab;
 }
 @-moz-document url-prefix() {
-  main .lightblue {
+  .lightblue {
     background-color: #458ea1;
   }
 }
-main .darkblue {
+
+.darkblue {
   background-color: #243d51;
 }
-main footer {
+
+footer {
   height: 18rem;
   width: 100%;
   background-color: #162635;
@@ -1237,79 +1245,80 @@ main footer {
   justify-content: center;
   align-items: center;
 }
-main footer #footer-content {
+footer #footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
-main footer #footer-content #footer-top {
+footer #footer-content #footer-top {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-main footer #footer-content #footer-top .horinzontal-line {
+footer #footer-content #footer-top .horinzontal-line {
   width: 31%;
   height: 1px;
   background-color: var(--white-font);
 }
-main footer #footer-content #footer-top #imprint-link {
+footer #footer-content #footer-top #imprint-link {
   font-size: 1.5rem;
   margin: 0 2.4rem;
 }
-main footer #footer-content #footer-top #imprint-link:hover {
+footer #footer-content #footer-top #imprint-link:hover {
   color: #ffffff;
 }
-main footer #footer-content #footer-mid {
+footer #footer-content #footer-mid {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-main footer #footer-content #footer-mid .link-home {
+footer #footer-content #footer-mid .link-home {
   font-size: 2rem;
 }
-main footer #footer-content #footer-mid .link-home:hover {
+footer #footer-content #footer-mid .link-home:hover {
   color: #ffffff;
 }
-main footer #footer-content #footer-mid .icon {
+footer #footer-content #footer-mid .icon {
   margin: 1.8rem 4rem;
 }
-main footer #footer-content #footer-mid .icon-logo {
+footer #footer-content #footer-mid .icon-logo {
   width: 3.4rem;
   height: 3.4rem;
 }
-main footer #footer-content #footer-bottom #copyright-text {
+footer #footer-content #footer-bottom #copyright-text {
   font-size: 1.3rem;
 }
 @media only screen and (min-width: 481px) {
-  main footer #footer-content {
+  footer #footer-content {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
   }
-  main footer #footer-content #footer-top {
+  footer #footer-content #footer-top {
     justify-content: space-around;
   }
-  main footer #footer-content #footer-top .horinzontal-line {
+  footer #footer-content #footer-top .horinzontal-line {
     width: 50%;
   }
-  main footer #footer-content #footer-top #imprint-link {
+  footer #footer-content #footer-top #imprint-link {
     font-size: 1.8rem;
     margin: 0 2.4rem;
   }
-  main footer #footer-content #footer-mid .link-home {
+  footer #footer-content #footer-mid .link-home {
     font-size: 2.4rem;
   }
-  main footer #footer-content #footer-mid .icon {
+  footer #footer-content #footer-mid .icon {
     margin: 1.8rem 4.8rem;
   }
-  main footer #footer-content #footer-bottom #copyright-text {
+  footer #footer-content #footer-bottom #copyright-text {
     font-size: 1.8rem;
   }
 }
-main footer .scroll-snap {
+footer .scroll-snap {
   scroll-snap-align: end;
 }
-main #contact-mail {
+
+#contact-mail {
   margin-bottom: 20px;
 }
 

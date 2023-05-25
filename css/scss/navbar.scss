@@ -314,7 +314,7 @@ nav {
 
 	&.closed {
 		animation: menu-list-disappear 1s ease-in;
-		transform: translateY(-90%);
+		transform: translateY(-150%);
 		opacity: 0;
 	}
 

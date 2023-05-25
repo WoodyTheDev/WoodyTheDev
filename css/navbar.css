@@ -302,7 +302,7 @@ nav #navbar-content #navbar-content-right #menu-btn-burger::after {
 }
 #menu-list.closed {
   animation: menu-list-disappear 1s ease-in;
-  transform: translateY(-90%);
+  transform: translateY(-150%);
   opacity: 0;
 }
 @media only screen and (max-width: 640px) {
