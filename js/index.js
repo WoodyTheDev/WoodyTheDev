@@ -113,11 +113,10 @@ function openGoogleMaps() {
 	const iframe = document.createElement("iframe");
 	iframe.id = "gmap_canvas";
 	iframe.src =
-		"https://www.google.com/maps/embed/v1/place?key=AIzaSyARXv-6ToCezWMIV9tqxMU0JyHMQH9C8G4&q=Spraitbach&zoom=7";
+		"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d168064.77775877144!2d9.543588802793373!3d48.83890999188071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799abc497576d3d%3A0x41ffd3c8d096fe0!2sSpraitbach!5e0!3m2!1sde!2sde!4v1711700956277!5m2!1sde!2sde";
 	iframe.frameborder = "0";
 	iframe.marginheight = "0";
 	iframe.marginwidth = "0";
-
 	document.getElementById("mapbtn").remove();
 	document
 		.getElementById("contact")
@@ -136,7 +135,6 @@ function initCopyrightYear() {
 			"copyright-text"
 		).innerHTML = `Copyright © ${year} WoodyTheDev. Some Rights Reserved.`;
 	}
-
 }
 
 function initBulletChartHover() {
