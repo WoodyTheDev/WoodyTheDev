@@ -30,8 +30,6 @@ Here's why you should hire me:
 - Strong work ethic
 - You need more? Let's talk and find out what I can do for you
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
 The website is build with native html, js and css. That were the requierements of the course and I stuck with it.
@@ -46,8 +44,6 @@ Sources of the images and icons:
 - Unsplash
 - Font Awesome
 - Do it yourself with GIMP
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 
