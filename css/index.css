@@ -40,7 +40,7 @@ body {
     page-break-after: always;
   }
   a,
-a:visited {
+  a:visited {
     text-decoration: underline;
   }
   @page {
@@ -48,14 +48,14 @@ a:visited {
     margin: 0.5cm;
   }
   p,
-h2,
-h3 {
+  h2,
+  h3 {
     orphans: 3;
     widows: 3;
   }
   img,
-canvas,
-iframe {
+  canvas,
+  iframe {
     display: none !important;
   }
   #contact {
@@ -84,6 +84,12 @@ iframe {
   background-color: white;
   -webkit-mask: url("../img/GitHub-Logos/github.svg") no-repeat center;
   mask: url("../img/GitHub-Logos/github.svg") no-repeat center;
+}
+
+.icon-download {
+  background-color: white;
+  -webkit-mask: url("../img/icons/file-arrow-down-solid.svg") no-repeat center;
+  mask: url("../img/icons/file-arrow-down-solid.svg") no-repeat center;
 }
 
 .icon-design {
@@ -288,7 +294,6 @@ main.scroll-snap-container {
 #home {
   height: 100vh;
   width: 100%;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: -1;
@@ -549,6 +554,9 @@ main.scroll-snap-container {
   height: 45vh;
   width: 70%;
 }
+.content .content-full-width .text-container.programming-languages {
+  height: initial;
+}
 @media only screen and (max-width: 1280px) and (orientation: portrait), only screen and (max-height: 480px) and (orientation: landscape) {
   .content .content-full-width .text-container {
     height: 42svh;
@@ -642,7 +650,7 @@ main.scroll-snap-container {
 }
 .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
   height: 33.3%;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 }
 .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row:last-child {
   padding-bottom: 0;
@@ -664,6 +672,7 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row {
     height: 100%;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
@@ -675,6 +684,7 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
     opacity: 1;
+    width: -moz-fit-content;
     width: fit-content;
     margin-right: 1rem;
   }
@@ -700,6 +710,7 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row {
     height: 100%;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
@@ -715,6 +726,7 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
     opacity: 1;
+    width: -moz-fit-content;
     width: fit-content;
     margin-right: 2rem;
     height: auto;
@@ -740,7 +752,8 @@ main.scroll-snap-container {
 .content .content-split-image .content-image {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   pointer-events: none;
 }
 .content .content-split-text {
@@ -876,12 +889,21 @@ main.scroll-snap-container {
   border: 1px solid #019aab;
   outline: 1px solid #019aab;
 }
+.content .content-split-form #email-form input::-moz-placeholder, .content .content-split-form #email-form textarea::-moz-placeholder {
+  color: var(--white-font);
+}
 .content .content-split-form #email-form input::placeholder,
 .content .content-split-form #email-form textarea::placeholder {
   color: var(--white-font);
 }
+.content .content-split-form #email-form input:hover::-moz-placeholder, .content .content-split-form #email-form textarea:hover::-moz-placeholder {
+  color: #019aab;
+}
 .content .content-split-form #email-form input:hover::placeholder,
 .content .content-split-form #email-form textarea:hover::placeholder {
+  color: #019aab;
+}
+.content .content-split-form #email-form input:focus::-moz-placeholder, .content .content-split-form #email-form textarea:focus::-moz-placeholder {
   color: #019aab;
 }
 .content .content-split-form #email-form input:focus::placeholder,
@@ -912,7 +934,7 @@ main.scroll-snap-container {
     resize: vertical;
   }
   .content .content-split-form #email-form input,
-.content .content-split-form #email-form textarea {
+  .content .content-split-form #email-form textarea {
     font-size: 1.4rem;
     padding: 0rem 0.6rem;
   }
@@ -928,48 +950,48 @@ main.scroll-snap-container {
 }
 @media only screen and (min-width: 481px) {
   .content .content-split-form .text-animation-1,
-.content .content-split-form .text-animation-2,
-.content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     top: 4rem;
   }
 }
 @media only screen and (min-width: 641px) {
   .content .content-split-form .text-animation-1,
-.content .content-split-form .text-animation-2,
-.content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     top: 4rem;
   }
 }
 @media only screen and (min-width: 961px) {
   .content .content-split-form .text-animation-1,
-.content .content-split-form .text-animation-2,
-.content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     top: 4.5rem;
   }
 }
 @media only screen and (min-width: 1025px) {
   .content .content-split-form .text-animation-1,
-.content .content-split-form .text-animation-2,
-.content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
     /* big landscape tablets, laptops, and desktops */
     top: 4.5rem;
   }
 }
 @media only screen and (min-width: 1281px) {
   .content .content-split-form .text-animation-1,
-.content .content-split-form .text-animation-2,
-.content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
     /* hi-res laptops and desktops */
     top: 4.8rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
   .content .content-split-form .text-animation-1,
-.content .content-split-form .text-animation-2,
-.content .content-split-form .text-animation-3 {
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
     top: 2.4rem;
   }
 }
@@ -1204,7 +1226,7 @@ main.scroll-snap-container {
     height: 200vh;
   }
   .content.content-split .content-split-image,
-.content.content-split .content-split-chart {
+  .content.content-split .content-split-chart {
     height: 50%;
     width: 100%;
   }
@@ -1289,6 +1311,7 @@ footer #footer-content #footer-mid .icon-logo {
 }
 footer #footer-content #footer-bottom #copyright-text {
   font-size: 1.3rem;
+  text-align: center;
 }
 @media only screen and (min-width: 481px) {
   footer #footer-content {
@@ -1328,132 +1351,518 @@ footer .scroll-snap {
   align-items: center;
 }
 
+.flex-right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
 .mobile-height {
   height: 100vh;
   height: 100svh;
 }
 
-#projects {
+#projects .project-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#projects .private-work-slide {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("../img/Projects/projects.jpg");
+  background-image: url("../img/Projects/projects/projects.jpg");
 }
 @media only screen and (max-width: 7680px) {
-  #projects {
+  #projects .private-work-slide {
     /* 8k */
-    background-image: url("../img/Projects/projects-desktop-7680.webp");
+    background-image: url("../img/Projects/projects/projects-desktop-7680.webp");
   }
 }
 @media only screen and (max-height: 2160px) {
-  #projects {
+  #projects .private-work-slide {
     /* 4k */
-    background-image: url("../img/Projects/projects-desktop-3840.webp");
+    background-image: url("../img/Projects/projects/projects-desktop-3840.webp");
   }
 }
 @media only screen and (max-height: 1440px) {
-  #projects {
+  #projects .private-work-slide {
     /* 1440p */
-    background-image: url("../img/Projects/projects-desktop-2560.webp");
+    background-image: url("../img/Projects/projects/projects-desktop-2560.webp");
   }
 }
 @media only screen and (max-height: 1280px) {
-  #projects {
+  #projects .private-work-slide {
     /* 1080p */
-    background-image: image-set(url("../img/Projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects-desktop-3840.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects-desktop-3840.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
   }
 }
 @media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
-  #projects {
+  #projects .private-work-slide {
     /* smartphones, iPhone, portrait 480x320 phones */
-    background-image: image-set(url("../img/Projects/projects-portrait-375.webp") 1x, url("../img/Projects/projects-portrait-375-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-portrait-375.webp") 1x, url("../img/Projects/projects-portrait-375-2x.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-portrait-375.webp") 1x, url("../img/Projects/projects/projects-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-375.webp") 1x, url("../img/Projects/projects/projects-portrait-375-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
-  #projects {
+  #projects .private-work-slide {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    background-image: image-set(url("../img/projects/projects-portrait-480.webp") 1x, url("../img/projects/projects-portrait-480-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-portrait-480.webp") 1x, url("../img/Projects/projects-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/projects/projects/projects-portrait-480.webp") 1x, url("../img/projects/projects/projects-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/projects/projects-portrait-480.webp") 1x, url("../img/projects/projects/projects-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-480.webp") 1x, url("../img/Projects/projects/projects-portrait-480-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
-  #projects {
+  #projects .private-work-slide {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-    background-image: image-set(url("../img/Projects/projects-portrait-768.webp") 1x, url("../img/Projects/projects-portrait-768-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-portrait-768.webp") 1x, url("../img/Projects/projects-portrait-768-2x.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-portrait-768.webp") 1x, url("../img/Projects/projects/projects-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-768.webp") 1x, url("../img/Projects/projects/projects-portrait-768-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
-  #projects {
+  #projects .private-work-slide {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
-    background-image: image-set(url("../img/Projects/projects-portrait-1280.webp") 1x, url("../img/Projects/projects-portrait-1280-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-portrait-1280.webp") 1x, url("../img/Projects/projects-portrait-1280-2x.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-portrait-1280.webp") 1x, url("../img/Projects/projects/projects-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-1280.webp") 1x, url("../img/Projects/projects/projects-portrait-1280-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
-  #projects {
-    background-image: image-set(url("../img/Projects/projects-landscape-667.webp") 1x, url("../img/Projects/projects-landscape-667-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-landscape-667.webp") 1x, url("../img/Projects/projects-landscape-667-2x.webp") 2x);
+  #projects .private-work-slide {
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-667.webp") 1x, url("../img/Projects/projects/projects-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-667.webp") 1x, url("../img/Projects/projects/projects-landscape-667-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
-  #projects {
-    background-image: image-set(url("../img/Projects/projects-landscape-800.webp") 1x, url("../img/Projects/projects-landscape-800-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-landscape-800.webp") 1x, url("../img/Projects/projects-landscape-800-2x.webp") 2x);
+  #projects .private-work-slide {
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-800.webp") 1x, url("../img/Projects/projects/projects-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-800.webp") 1x, url("../img/Projects/projects/projects-landscape-800-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* big landscape tablets, laptops, and desktops */
-    background-image: image-set(url("../img/Projects/projects-desktop-1280.webp") 1x, url("../img/Projects/projects-desktop-2560.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-desktop-1280.webp") 1x, url("../img/Projects/projects-desktop-2560.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-desktop-1280.webp") 1x, url("../img/Projects/projects/projects-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-desktop-1280.webp") 1x, url("../img/Projects/projects/projects-desktop-2560.webp") 2x);
   }
 }
 @media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* hi-res laptops and desktops */
-    background-image: image-set(url("../img/Projects/projects-landscape-1366.webp") 1x, url("../img/Projects/projects-landscape-1366-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-landscape-1366.webp") 1x, url("../img/Projects/projects-landscape-1366-2x.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-1366.webp") 1x, url("../img/Projects/projects/projects-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-1366.webp") 1x, url("../img/Projects/projects/projects-landscape-1366-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* tablets landscape */
-    background-image: image-set(url("../img/Projects/projects-landscape-1707.webp") 1x, url("../img/Projects/projects-landscape-1707-2x.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-landscape-1707.webp") 1x, url("../img/Projects/projects-landscape-1707-2x.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-1707.webp") 1x, url("../img/Projects/projects/projects-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-1707.webp") 1x, url("../img/Projects/projects/projects-landscape-1707-2x.webp") 2x);
   }
 }
 @media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* 1080p */
-    background-image: image-set(url("../img/Projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects-desktop-3840.webp") 2x);
-    background-image: -webkit-image-set(url("../img/Projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects-desktop-3840.webp") 2x);
+    background-image: image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
   }
 }
 @media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* 1440p */
-    background-image: url("../img/Projects/projects-desktop-2560.webp");
+    background-image: url("../img/Projects/projects/projects-desktop-2560.webp");
   }
 }
 @media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* 4k */
-    background-image: url("../img/Projects/projects-desktop-3840.webp");
+    background-image: url("../img/Projects/projects/projects-desktop-3840.webp");
   }
 }
 @media only screen and (min-width: 3841px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* Ultra-wide-screens */
-    background-image: url("../img/Projects/projects-super-wide-5120.webp");
+    background-image: url("../img/Projects/projects/projects-super-wide-5120.webp");
   }
 }
 @media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
-  #projects {
+  #projects .private-work-slide {
     /* 8k */
-    background-image: url("../img/Projects/projects-desktop-7680.webp");
+    background-image: url("../img/Projects/projects/projects-desktop-7680.webp");
+  }
+}
+#projects .exercise-tracker-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Projects/exercisetracker/exercise-tracker.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #projects .exercise-tracker-slide {
+    /* 8k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #projects .exercise-tracker-slide {
+    /* 4k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #projects .exercise-tracker-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #projects .exercise-tracker-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: -webkit-image-set(url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 4k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 8k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-7680.webp");
+  }
+}
+#projects .pong-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Projects/pong/pong.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #projects .pong-slide {
+    /* 8k */
+    background-image: url("../img/Projects/pong/pong-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #projects .pong-slide {
+    /* 4k */
+    background-image: url("../img/Projects/pong/pong-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #projects .pong-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/pong/pong-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #projects .pong-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Projects/pong/pong-portrait-375.webp") 1x, url("../img/Projects/pong/pong-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-375.webp") 1x, url("../img/Projects/pong/pong-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: -webkit-image-set(url("../img/projects/pong/pong-portrait-480.webp") 1x, url("../img/projects/pong/pong-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/pong/pong-portrait-480.webp") 1x, url("../img/projects/pong/pong-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-480.webp") 1x, url("../img/Projects/pong/pong-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Projects/pong/pong-portrait-768.webp") 1x, url("../img/Projects/pong/pong-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-768.webp") 1x, url("../img/Projects/pong/pong-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Projects/pong/pong-portrait-1280.webp") 1x, url("../img/Projects/pong/pong-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-1280.webp") 1x, url("../img/Projects/pong/pong-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #projects .pong-slide {
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-667.webp") 1x, url("../img/Projects/pong/pong-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-667.webp") 1x, url("../img/Projects/pong/pong-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #projects .pong-slide {
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-800.webp") 1x, url("../img/Projects/pong/pong-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-800.webp") 1x, url("../img/Projects/pong/pong-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Projects/pong/pong-desktop-1280.webp") 1x, url("../img/Projects/pong/pong-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-desktop-1280.webp") 1x, url("../img/Projects/pong/pong-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-1366.webp") 1x, url("../img/Projects/pong/pong-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-1366.webp") 1x, url("../img/Projects/pong/pong-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-1707.webp") 1x, url("../img/Projects/pong/pong-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-1707.webp") 1x, url("../img/Projects/pong/pong-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/pong/pong-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 4k */
+    background-image: url("../img/Projects/pong/pong-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Projects/pong/pong-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 8k */
+    background-image: url("../img/Projects/pong/pong-desktop-7680.webp");
+  }
+}
+#projects .woodys-file-manager-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #projects .woodys-file-manager-slide {
+    /* 8k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #projects .woodys-file-manager-slide {
+    /* 4k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #projects .woodys-file-manager-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #projects .woodys-file-manager-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: -webkit-image-set(url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 4k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 8k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-7680.webp");
   }
 }
 #projects .content-container {
@@ -1482,10 +1891,12 @@ footer .scroll-snap {
   border: 2px solid #243d51;
   color: #243d51;
 }
-#github-website-link:hover .icon-github {
+#github-website-link:hover .icon-github,
+#github-website-link:hover .icon-download {
   background-color: #243d51;
 }
-#github-website-link .icon-github {
+#github-website-link .icon-github,
+#github-website-link .icon-download {
   width: 3.2rem;
   height: 3.2rem;
   margin-right: 1rem;
@@ -1496,10 +1907,9 @@ footer .scroll-snap {
     font-size: 1.4rem;
     padding: 0;
   }
-  #github-website-link .icon-github {
+  #github-website-link .icon-github,
+  #github-website-link .icon-download {
     width: 2rem;
     height: 2rem;
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

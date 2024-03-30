@@ -1,6 +1,6 @@
 const SCROLL_SWIPE_LEFT = "left";
 const SCROLL_SWIPE_RIGHT = "right";
-let swiper;
+let swiperList;
 let prevScrollPos = 0;
 let scrollAtEnd = SCROLL_SWIPE_LEFT;
 
@@ -172,7 +172,7 @@ function activateBulletpoint(bulletNumber) {
 }
 
 function initSwiper() {
-	swiper = new Swiper(".swiper", {
+	swiperList = new Swiper(".swiper", {
 		loop: true,
 		//Pagination points
 		pagination: {
@@ -184,7 +184,8 @@ function initSwiper() {
 			prevEl: ".swiper-button-prev",
 		},
 	});
-	initBlockSwipeOnScroll(swiper);
+	initBlockSwipeOnScroll(swiperList[0]);
+	initBlockSwipeOnScroll(swiperList[1]);
 }
 
 function initBlockSwipeOnScroll(swiper) {
@@ -249,7 +250,8 @@ function getScrollAtEnd(el) {
 
 function resizeFunction() {
 	initWidth();
-	swiper.update();
+	swiperList[0].update();
+	swiperList[1].update();
 }
 
 initSlideIn();
