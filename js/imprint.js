@@ -1,8 +1,14 @@
 function initCopyrightYear() {
 	const year = new Date().getFullYear();
-	document.getElementById(
-		"copyright-text"
-	).innerHTML = `Copyright © ${year} WoodyTheDev. All Rights Reserved.`;
+	if (CURRENT_LANGUAGE === LANGUAGE.DE) {
+		document.getElementById(
+			"copyright-text"
+		).innerHTML = `Copyright © ${year} WoodyTheDev. Einige Rechte vorbehalten.`;
+	} else if (CURRENT_LANGUAGE === LANGUAGE.EN) {
+		document.getElementById(
+			"copyright-text"
+		).innerHTML = `Copyright © ${year} WoodyTheDev. Some Rights Reserved.`;
+	}
 }
 
 function insertEmail() {

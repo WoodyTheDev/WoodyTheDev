@@ -1,0 +1,1915 @@
+:root {
+  --white-font: #d9dbea;
+  --scrollbar-width: 0.5rem;
+}
+
+@font-face {
+  font-family: "cabin regular";
+  src: url("../fonts/Cabin-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "notosanslepcha regular";
+  src: url("../fonts/NotoSansLepcha-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+html {
+  font-size: 62.5%;
+  color: var(--white-font);
+}
+html a {
+  color: var(--white-font);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  overflow-y: hidden;
+}
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+    overflow: visible !important;
+  }
+  .page {
+    page-break-after: always;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  @page {
+    size: A4;
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  img,
+  canvas,
+  iframe {
+    display: none !important;
+  }
+  #contact {
+    display: none !important;
+  }
+  nav {
+    display: none !important;
+  }
+}
+/**************************************************************
+* SVG Icons
+**************************************************************/
+.icon-linkedin {
+  background-color: white;
+  -webkit-mask: url("../img/LinkedIn-Logos/linkedin.svg") no-repeat center;
+  mask: url("../img/LinkedIn-Logos/linkedin.svg") no-repeat center;
+}
+
+.icon-linkedin-in {
+  background-color: white;
+  -webkit-mask: url("../img/LinkedIn-Logos/linkedin-in.svg") no-repeat center;
+  mask: url("../img/LinkedIn-Logos/linkedin-in.svg") no-repeat center;
+}
+
+.icon-github {
+  background-color: white;
+  -webkit-mask: url("../img/GitHub-Logos/github.svg") no-repeat center;
+  mask: url("../img/GitHub-Logos/github.svg") no-repeat center;
+}
+
+.icon-download {
+  background-color: white;
+  -webkit-mask: url("../img/icons/file-arrow-down-solid.svg") no-repeat center;
+  mask: url("../img/icons/file-arrow-down-solid.svg") no-repeat center;
+}
+
+.icon-design {
+  background-color: white;
+  -webkit-mask: url("../img/icons/palette-solid.svg") no-repeat center;
+  mask: url("../img/icons/palette-solid.svg") no-repeat center;
+}
+
+.icon-code {
+  background-color: white;
+  -webkit-mask: url("../img/icons/code-solid.svg") no-repeat center;
+  mask: url("../img/icons/code-solid.svg") no-repeat center;
+}
+
+.icon-images {
+  background-color: white;
+  -webkit-mask: url("../img/icons/images-solid.svg") no-repeat center;
+  mask: url("../img/icons/images-solid.svg") no-repeat center;
+}
+
+.icon-lock {
+  background-color: white;
+  -webkit-mask: url("../img/icons/lock-solid.svg") no-repeat center;
+  mask: url("../img/icons/lock-solid.svg") no-repeat center;
+}
+
+.icon-java {
+  background-color: white;
+  -webkit-mask: url("../img/icons/java.svg") no-repeat center;
+  mask: url("../img/icons/java.svg") no-repeat center;
+}
+
+.icon-layer-group {
+  background-color: white;
+  -webkit-mask: url("../img/icons/layer-group-solid.svg") no-repeat center;
+  mask: url("../img/icons/layer-group-solid.svg") no-repeat center;
+}
+
+.icon-database {
+  background-color: white;
+  -webkit-mask: url("../img/icons/database-solid.svg") no-repeat center;
+  mask: url("../img/icons/database-solid.svg") no-repeat center;
+}
+
+.icon-vuejs {
+  background-color: white;
+  -webkit-mask: url("../img/icons/vuejs.svg") no-repeat center;
+  mask: url("../img/icons/vuejs.svg") no-repeat center;
+}
+
+.icon-typo3 {
+  background-color: white;
+  -webkit-mask: url("../img/icons/typo3.svg") no-repeat center;
+  mask: url("../img/icons/typo3.svg") no-repeat center;
+}
+
+.icon-cordova {
+  background-color: white;
+  -webkit-mask: url("../img/icons/cordova.svg") no-repeat center;
+  mask: url("../img/icons/cordova.svg") no-repeat center;
+}
+
+.icon-vs-code {
+  background-color: white;
+  -webkit-mask: url("../img/icons/vs-code.svg") no-repeat center;
+  mask: url("../img/icons/vs-code.svg") no-repeat center;
+}
+
+.icon-gimp {
+  background-color: white;
+  -webkit-mask: url("../img/icons/gimp.svg") no-repeat center;
+  mask: url("../img/icons/gimp.svg") no-repeat center;
+}
+
+.icon-bing {
+  background-color: white;
+  -webkit-mask: url("../img/icons/bing.svg") no-repeat center;
+  mask: url("../img/icons/bing.svg") no-repeat center;
+}
+
+.icon-woody-the-dev {
+  background-color: white;
+  -webkit-mask: url("../img/icons/woody-the-dev.svg") no-repeat center;
+  mask: url("../img/icons/woody-the-dev.svg") no-repeat center;
+}
+
+/**************************************************************
+* General Animations
+**************************************************************/
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+.from-left {
+  transform: translateX(-50%);
+}
+
+.from-right {
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right {
+  transition: opacity 400ms ease-in, transform 640ms ease-in;
+  opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/**************************************************************
+* Content
+**************************************************************/
+#overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0;
+  display: inline-block;
+  z-index: -1;
+  transition: z-index 0.5s ease-in;
+}
+@keyframes overlay-active {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes overlay-inactive {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#overlay.active {
+  opacity: 0.5;
+  animation: overlay-active 0.5s ease-in;
+  z-index: 0;
+}
+#overlay.inactive {
+  animation: overlay-inactive 0.5s ease-in;
+  opacity: 0;
+}
+
+.scroll-snap {
+  scroll-snap-align: start;
+  flex: none;
+}
+
+main {
+  max-height: 100vh;
+  overflow-x: hidden;
+}
+main.scroll-snap-container {
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  flex: none;
+  flex-flow: column nowrap;
+}
+@-moz-document url-prefix() {
+  main.scroll-snap-container {
+    scroll-snap-type: none;
+  }
+}
+
+/**************************************************************
+* Home
+**************************************************************/
+@-moz-document url-prefix() {
+  .home-placeholder {
+    height: 1px;
+    width: 100%;
+    background: rgb(69, 142, 161);
+  }
+}
+
+#home-title-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 25%;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  font-family: "cabin regular";
+}
+
+#home {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Startsite/Startsite.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #home {
+    /* 8k */
+    background-image: url("../img/Startsite/Startsite-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #home {
+    /* 4k */
+    background-image: url("../img/Startsite/Startsite-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #home {
+    /* 1440p */
+    background-image: url("../img/Startsite/Startsite-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #home {
+    /* 1080p */
+    background-image: image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #home {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Startsite/Startsite-portrait-375.webp") 1x, url("../img/Startsite/Startsite-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-375.webp") 1x, url("../img/Startsite/Startsite-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #home {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: image-set(url("../img/Startsite/Startsite-portrait-480.webp") 1x, url("../img/Startsite/Startsite-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-480.webp") 1x, url("../img/Startsite/Startsite-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #home {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Startsite/Startsite-portrait-768.webp") 1x, url("../img/Startsite/Startsite-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-768.webp") 1x, url("../img/Startsite/Startsite-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #home {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Startsite/Startsite-portrait-1280.webp") 1x, url("../img/Startsite/Startsite-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-portrait-1280.webp") 1x, url("../img/Startsite/Startsite-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #home {
+    background-image: image-set(url("../img/Startsite/Startsite-landscape-667.webp") 1x, url("../img/Startsite/Startsite-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-667.webp") 1x, url("../img/Startsite/Startsite-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #home {
+    background-image: image-set(url("../img/Startsite/Startsite-landscape-800.webp") 1x, url("../img/Startsite/Startsite-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-800.webp") 1x, url("../img/Startsite/Startsite-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #home {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Startsite/Startsite-desktop-1280.webp") 1x, url("../img/Startsite/Startsite-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-desktop-1280.webp") 1x, url("../img/Startsite/Startsite-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #home {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Startsite/Startsite-landscape-1366.webp") 1x, url("../img/Startsite/Startsite-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-1366.webp") 1x, url("../img/Startsite/Startsite-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #home {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Startsite/Startsite-landscape-1707.webp") 1x, url("../img/Startsite/Startsite-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-landscape-1707.webp") 1x, url("../img/Startsite/Startsite-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #home {
+    /* 1080p */
+    background-image: image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Startsite/Startsite-desktop-1920.webp") 1x, url("../img/Startsite/Startsite-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #home {
+    /* 1440p */
+    background-image: url("../img/Startsite/Startsite-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #home {
+    /* 4k */
+    background-image: url("../img/Startsite/Startsite-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #home {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Startsite/Startsite-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #home {
+    /* 8k */
+    background-image: url("../img/Startsite/Startsite-desktop-7680.webp");
+  }
+}
+#home .home-title {
+  font-size: 3rem;
+}
+#home .middle {
+  font-size: 2.5rem;
+}
+#home .small {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+@media only screen and (min-width: 320px) {
+  #home .home-title {
+    font-size: 4rem;
+  }
+  #home .middle {
+    font-size: 3.3rem;
+  }
+  #home .small {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+  }
+}
+@media only screen and (min-width: 481px) {
+  #home {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  }
+  #home .home-title {
+    font-size: 4.8rem;
+  }
+  #home .small {
+    font-size: 1.8rem;
+  }
+  #home .middle {
+    font-size: 4rem;
+  }
+}
+@media only screen and (min-width: 641px) {
+  #home {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
+  #home .home-title {
+    font-size: 5.6rem;
+  }
+  #home .small {
+    font-size: 2rem;
+  }
+  #home .middle {
+    font-size: 4.6rem;
+  }
+}
+@media only screen and (min-width: 961px) {
+  #home {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+  }
+  #home .home-title {
+    font-size: 6.4rem;
+  }
+  #home .small {
+    font-size: 2.2rem;
+  }
+  #home .middle {
+    font-size: 5.3rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  #home {
+    /* big landscape tablets, laptops, and desktops */
+  }
+  #home .home-title {
+    font-size: 7.2rem;
+  }
+  #home .small {
+    font-size: 2.4rem;
+  }
+  #home .middle {
+    font-size: 6rem;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  #home {
+    /* hi-res laptops and desktops */
+  }
+  #home .home-title {
+    font-size: 7.2rem;
+  }
+  #home .small {
+    font-size: 2.6rem;
+  }
+  #home .middle {
+    font-size: 6rem;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  #home .home-title {
+    font-size: 4rem;
+  }
+  #home .small {
+    font-size: 1.6rem;
+  }
+  #home .middle {
+    font-size: 3.3rem;
+  }
+}
+
+/**************************************************************
+* Content
+**************************************************************/
+.content {
+  height: 100vh;
+  width: 100%;
+}
+.content .content-full-width {
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-height: 480px) and (orientation: landscape) {
+  .content .content-full-width {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 1280px) and (orientation: portrait) {
+  .content .content-full-width {
+    width: 100vw;
+    flex-direction: column;
+  }
+}
+.content .content-full-width .text-container {
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  width: 70%;
+}
+.content .content-full-width .text-container.programming-languages {
+  height: initial;
+}
+@media only screen and (max-width: 1280px) and (orientation: portrait), only screen and (max-height: 480px) and (orientation: landscape) {
+  .content .content-full-width .text-container {
+    height: 42svh;
+  }
+  .content .content-full-width .text-container.programming-languages {
+    width: 75%;
+    justify-content: center;
+  }
+}
+.content .content-full-width .chart {
+  height: 45vh;
+  width: 30%;
+  margin-right: 4rem;
+}
+@media only screen and (max-height: 480px) and (orientation: landscape) {
+  .content .content-full-width .chart {
+    margin-right: 0rem;
+    padding-right: 1rem;
+  }
+}
+@media only screen and (max-width: 1280px) and (orientation: portrait) {
+  .content .content-full-width .chart {
+    width: 60%;
+    margin-right: 0;
+    height: 40svh;
+  }
+}
+.content .content-full-width .bulletpoints-container {
+  height: 100%;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+.content .content-full-width .bulletpoints-container .bulletpoint-title {
+  display: flex;
+  white-space: nowrap;
+}
+.content .content-full-width .bulletpoints-container .bulletpoint-title .icon-logo {
+  min-width: 2.3rem;
+  min-height: 2.3rem;
+  margin-right: 1rem;
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
+  height: 45%;
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row {
+  display: flex;
+  width: 100%;
+  height: 55%;
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-1 {
+  color: rgb(75, 192, 192);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-1 .icon-logo {
+  background-color: rgb(75, 192, 192);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-2 {
+  color: rgb(69, 184, 202);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-2 .icon-logo {
+  background-color: rgb(69, 184, 202);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-3 {
+  color: rgb(61, 173, 218);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-3 .icon-logo {
+  background-color: rgb(61, 173, 218);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-4 {
+  color: rgb(54, 162, 235);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .blue-4 .icon-logo {
+  background-color: rgb(54, 162, 235);
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  margin-right: 3rem;
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet.active {
+  opacity: 1;
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet p {
+  margin: 0;
+}
+.content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+  max-height: 100%;
+  font-size: 1.6rem;
+}
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
+  height: 33.3%;
+  padding-bottom: 3rem;
+}
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row:last-child {
+  padding-bottom: 0;
+}
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
+  opacity: 1;
+}
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet .bulletpoint-title {
+  font-size: 1.7rem;
+}
+.content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 1280px) and (orientation: portrait) {
+  .content .content-full-width .bulletpoints-container {
+    display: flex;
+    margin-top: 0;
+    overflow-x: auto;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row {
+    height: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
+    height: 100%;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title {
+    font-size: 1.8rem;
+    width: 100%;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
+    opacity: 1;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-right: 1rem;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+    font-size: 1.3rem;
+  }
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container {
+    height: auto;
+  }
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
+    height: auto;
+    padding-bottom: 0;
+  }
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
+    width: 25rem;
+  }
+}
+@media only screen and (max-height: 480px) and (orientation: landscape) {
+  .content .content-full-width .bulletpoints-container {
+    display: flex;
+    margin-top: 0;
+    overflow-x: auto;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row {
+    height: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
+    height: 100%;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title {
+    font-size: 1.8rem;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bulletpoint-title p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
+    opacity: 1;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-right: 2rem;
+    height: auto;
+  }
+  .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet .bulletpoint-text {
+    display: none;
+  }
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container {
+    height: auto;
+  }
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row {
+    height: auto;
+    padding-bottom: 0;
+  }
+  .content .content-full-width .bulletpoints-container.skills-bulletpoints-container .bulletpoints-row .bullet {
+    width: 25rem;
+  }
+}
+.content .content-split-image {
+  height: 100%;
+  width: 50%;
+}
+.content .content-split-image .content-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+.content .content-split-text {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .content-split-chart {
+  font-size: 1.7rem;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content .content-split-chart #skills-chart {
+  width: 100%;
+}
+@media only screen and (min-width: 481px) {
+  .content .content-split-chart {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content .content-split-chart {
+    font-size: 1.7rem;
+  }
+}
+.content .content-split-form {
+  font-size: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.content .content-split-form .content-container {
+  position: relative;
+}
+.content .content-split-form .content-container .text-success-margin {
+  margin-top: 1.4rem;
+}
+@media only screen and (min-width: 481px) {
+  .content .content-split-form {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .content .content-split-form {
+    width: 50%;
+    flex-direction: row;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content .content-split-form {
+    font-size: 1.7rem;
+  }
+}
+.content .content-split-form #email-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.8rem;
+}
+.content .content-split-form #email-form #form-name {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.content .content-split-form #email-form #form-email {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.content .content-split-form #email-form #form-subject {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+.content .content-split-form #email-form #form-message {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+.content .content-split-form #email-form #form-submit {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+.content .content-split-form #email-form input {
+  height: 3rem;
+}
+.content .content-split-form #email-form #form-name:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #243d51 inset;
+  -webkit-text-fill-color: var(--white-font);
+}
+.content .content-split-form #email-form #form-email:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #243d51 inset;
+  -webkit-text-fill-color: var(--white-font);
+}
+.content .content-split-form #email-form textarea {
+  height: 9.6rem;
+  min-height: 9.6rem;
+  max-height: 30vh;
+  resize: vertical;
+}
+.content .content-split-form #email-form input,
+.content .content-split-form #email-form textarea {
+  width: 100%;
+  padding: 0.8rem 0.8rem;
+  box-sizing: border-box;
+  border: 1px solid var(--white-font);
+  background-color: transparent;
+  border-radius: 4px;
+  color: var(--white-font);
+  font-size: 2rem;
+}
+.content .content-split-form #email-form input:hover,
+.content .content-split-form #email-form textarea:hover {
+  border: 1px solid #019aab;
+}
+.content .content-split-form #email-form input:focus,
+.content .content-split-form #email-form textarea:focus {
+  border: 1px solid #019aab;
+  outline: 1px solid #019aab;
+}
+.content .content-split-form #email-form input::-moz-placeholder, .content .content-split-form #email-form textarea::-moz-placeholder {
+  color: var(--white-font);
+}
+.content .content-split-form #email-form input::placeholder,
+.content .content-split-form #email-form textarea::placeholder {
+  color: var(--white-font);
+}
+.content .content-split-form #email-form input:hover::-moz-placeholder, .content .content-split-form #email-form textarea:hover::-moz-placeholder {
+  color: #019aab;
+}
+.content .content-split-form #email-form input:hover::placeholder,
+.content .content-split-form #email-form textarea:hover::placeholder {
+  color: #019aab;
+}
+.content .content-split-form #email-form input:focus::-moz-placeholder, .content .content-split-form #email-form textarea:focus::-moz-placeholder {
+  color: #019aab;
+}
+.content .content-split-form #email-form input:focus::placeholder,
+.content .content-split-form #email-form textarea:focus::placeholder {
+  color: #019aab;
+}
+.content .content-split-form #email-form button {
+  padding: 0.8rem;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid var(--white-font);
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--white-font);
+}
+.content .content-split-form #email-form button:hover {
+  border: 2px solid #019aab;
+  color: #019aab;
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content .content-split-form #email-form input {
+    height: 2rem;
+  }
+  .content .content-split-form #email-form textarea {
+    height: 2rem;
+    min-height: 2rem;
+    max-height: 2vh;
+    resize: vertical;
+  }
+  .content .content-split-form #email-form input,
+  .content .content-split-form #email-form textarea {
+    font-size: 1.4rem;
+    padding: 0rem 0.6rem;
+  }
+  .content .content-split-form #email-form button {
+    font-size: 1.4rem;
+    padding: 0;
+  }
+}
+.content .content-split-form .text-animation-1,
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
+  top: 3.6rem;
+}
+@media only screen and (min-width: 481px) {
+  .content .content-split-form .text-animation-1,
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    top: 4rem;
+  }
+}
+@media only screen and (min-width: 641px) {
+  .content .content-split-form .text-animation-1,
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    top: 4rem;
+  }
+}
+@media only screen and (min-width: 961px) {
+  .content .content-split-form .text-animation-1,
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    top: 4.5rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .content .content-split-form .text-animation-1,
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
+    /* big landscape tablets, laptops, and desktops */
+    top: 4.5rem;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .content .content-split-form .text-animation-1,
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
+    /* hi-res laptops and desktops */
+    top: 4.8rem;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content .content-split-form .text-animation-1,
+  .content .content-split-form .text-animation-2,
+  .content .content-split-form .text-animation-3 {
+    top: 2.4rem;
+  }
+}
+.content .content-split-map {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .content-split-map #gmap_canvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: none !important;
+}
+.content .content-split-map button {
+  padding: 0.8rem;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid var(--white-font);
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--white-font);
+}
+.content .content-split-map button:hover {
+  border: 2px solid #019aab;
+  color: #019aab;
+}
+@media only screen and (min-width: 1280px) {
+  .content .content-split-map {
+    width: 50%;
+  }
+}
+.content .content-container {
+  max-width: 800px;
+  width: 75%;
+}
+.content h1 {
+  font-family: "cabin regular", "Tahoma", sans-serif;
+  color: #31d6ff;
+  font-size: 3rem;
+  margin: 0;
+}
+@media only screen and (min-width: 481px) {
+  .content h1 {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    font-size: 3.1rem;
+  }
+}
+@media only screen and (min-width: 641px) {
+  .content h1 {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    font-size: 3.3rem;
+  }
+}
+@media only screen and (min-width: 961px) {
+  .content h1 {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    font-size: 3.6rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .content h1 {
+    /* big landscape tablets, laptops, and desktops */
+    font-size: 3.8rem;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content h1 {
+    font-size: 2.3rem;
+  }
+}
+.content h2 {
+  font-family: "cabin regular", "Tahoma", sans-serif;
+  font-size: 2rem;
+  margin: 0.8rem 0;
+}
+@media only screen and (min-width: 481px) {
+  .content h2 {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 641px) {
+  .content h2 {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    font-size: 2.6rem;
+    margin: 0.9rem 0;
+  }
+}
+@media only screen and (min-width: 961px) {
+  .content h2 {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    font-size: 2.9rem;
+    margin: 1rem 0;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .content h2 {
+    /* big landscape tablets, laptops, and desktops */
+    font-size: 3rem;
+    margin: 1.1rem 0;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .content h2 {
+    /* hi-res laptops and desktops */
+    font-size: 3.2rem;
+    margin: 1.2rem 0;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content h2 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+}
+.content .content-text {
+  font-family: "notosanslepcha regular", sans-serif;
+  font-size: 1.7rem;
+}
+@media only screen and (min-width: 481px) {
+  .content .content-text {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content .content-text {
+    font-size: 1.3rem;
+  }
+  .content .content-text p {
+    margin: 0;
+  }
+}
+.content .text-animation-wrapper {
+  white-space: nowrap;
+}
+.content .text-animation-margin {
+  margin-top: 4rem;
+}
+@media only screen and (min-width: 481px) {
+  .content .text-animation-margin {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    margin-top: 5rem;
+  }
+}
+@media only screen and (min-width: 641px) {
+  .content .text-animation-margin {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    margin-top: 5.2rem;
+  }
+}
+@media only screen and (min-width: 961px) {
+  .content .text-animation-margin {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    margin-top: 5.8rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .content .text-animation-margin {
+    /* big landscape tablets, laptops, and desktops */
+    margin-top: 6rem;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .content .text-animation-margin {
+    /* hi-res laptops and desktops */
+    margin-top: 6.4rem;
+  }
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  .content .text-animation-margin {
+    margin-top: 2.4rem;
+  }
+  .content .text-animation-margin p {
+    margin-bottom: 0.5rem;
+  }
+}
+.content .text-animation-1 {
+  animation: text-animation-1 25s infinite;
+  position: absolute;
+  opacity: 0;
+}
+.content .text-animation-2 {
+  animation: text-animation-2 25s infinite;
+  position: absolute;
+  opacity: 0;
+}
+.content .text-animation-3 {
+  animation: text-animation-3 25s infinite;
+  position: absolute;
+  opacity: 0;
+}
+@keyframes text-animation-1 {
+  0% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+}
+@keyframes text-animation-2 {
+  30% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+}
+@keyframes text-animation-3 {
+  63% {
+    opacity: 0;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .content.content-split {
+    flex-direction: column;
+    height: 200vh;
+  }
+  .content.content-split .content-split-image,
+  .content.content-split .content-split-chart {
+    height: 50%;
+    width: 100%;
+  }
+  .content.content-split .content-split-text {
+    height: 50%;
+    width: 100%;
+  }
+  .content.content-split .content-split-text .content-text-container {
+    max-width: 70%;
+    width: 100%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  .content.content-split .scroll-snap:nth-child(2) {
+    scroll-snap-align: none;
+  }
+}
+
+.lightblue {
+  background-color: #019aab;
+}
+@-moz-document url-prefix() {
+  .lightblue {
+    background-color: #458ea1;
+  }
+}
+
+.darkblue {
+  background-color: #243d51;
+}
+
+footer {
+  height: 18rem;
+  width: 100%;
+  background-color: #162635;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+footer #footer-content #footer-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer #footer-content #footer-top .horinzontal-line {
+  width: 31%;
+  height: 1px;
+  background-color: var(--white-font);
+}
+footer #footer-content #footer-top #imprint-link {
+  font-size: 1.5rem;
+  margin: 0 2.4rem;
+}
+footer #footer-content #footer-top #imprint-link:hover {
+  color: #ffffff;
+}
+footer #footer-content #footer-mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer #footer-content #footer-mid .link-home {
+  font-size: 2rem;
+}
+footer #footer-content #footer-mid .link-home:hover {
+  color: #ffffff;
+}
+footer #footer-content #footer-mid .icon {
+  margin: 1.8rem 4rem;
+}
+footer #footer-content #footer-mid .icon-logo {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+footer #footer-content #footer-bottom #copyright-text {
+  font-size: 1.3rem;
+  text-align: center;
+}
+@media only screen and (min-width: 481px) {
+  footer #footer-content {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  }
+  footer #footer-content #footer-top {
+    justify-content: space-around;
+  }
+  footer #footer-content #footer-top .horinzontal-line {
+    width: 50%;
+  }
+  footer #footer-content #footer-top #imprint-link {
+    font-size: 1.8rem;
+    margin: 0 2.4rem;
+  }
+  footer #footer-content #footer-mid .link-home {
+    font-size: 2.4rem;
+  }
+  footer #footer-content #footer-mid .icon {
+    margin: 1.8rem 4.8rem;
+  }
+  footer #footer-content #footer-bottom #copyright-text {
+    font-size: 1.8rem;
+  }
+}
+footer .scroll-snap {
+  scroll-snap-align: end;
+}
+
+#contact-mail {
+  margin-bottom: 20px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.mobile-height {
+  height: 100vh;
+  height: 100svh;
+}
+
+#projects .project-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#projects .private-work-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Projects/projects/projects.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #projects .private-work-slide {
+    /* 8k */
+    background-image: url("../img/Projects/projects/projects-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #projects .private-work-slide {
+    /* 4k */
+    background-image: url("../img/Projects/projects/projects-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #projects .private-work-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/projects/projects-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #projects .private-work-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #projects .private-work-slide {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Projects/projects/projects-portrait-375.webp") 1x, url("../img/Projects/projects/projects-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-375.webp") 1x, url("../img/Projects/projects/projects-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #projects .private-work-slide {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: -webkit-image-set(url("../img/projects/projects/projects-portrait-480.webp") 1x, url("../img/projects/projects/projects-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/projects/projects-portrait-480.webp") 1x, url("../img/projects/projects/projects-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-480.webp") 1x, url("../img/Projects/projects/projects-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #projects .private-work-slide {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Projects/projects/projects-portrait-768.webp") 1x, url("../img/Projects/projects/projects-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-768.webp") 1x, url("../img/Projects/projects/projects-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #projects .private-work-slide {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Projects/projects/projects-portrait-1280.webp") 1x, url("../img/Projects/projects/projects-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-1280.webp") 1x, url("../img/Projects/projects/projects-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-667.webp") 1x, url("../img/Projects/projects/projects-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-667.webp") 1x, url("../img/Projects/projects/projects-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-800.webp") 1x, url("../img/Projects/projects/projects-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-800.webp") 1x, url("../img/Projects/projects/projects-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Projects/projects/projects-desktop-1280.webp") 1x, url("../img/Projects/projects/projects-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-desktop-1280.webp") 1x, url("../img/Projects/projects/projects-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-1366.webp") 1x, url("../img/Projects/projects/projects-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-1366.webp") 1x, url("../img/Projects/projects/projects-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Projects/projects/projects-landscape-1707.webp") 1x, url("../img/Projects/projects/projects-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-landscape-1707.webp") 1x, url("../img/Projects/projects/projects-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/projects/projects-desktop-1920.webp") 1x, url("../img/Projects/projects/projects-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/projects/projects-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* 4k */
+    background-image: url("../img/Projects/projects/projects-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Projects/projects/projects-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #projects .private-work-slide {
+    /* 8k */
+    background-image: url("../img/Projects/projects/projects-desktop-7680.webp");
+  }
+}
+#projects .exercise-tracker-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Projects/exercisetracker/exercise-tracker.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #projects .exercise-tracker-slide {
+    /* 8k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #projects .exercise-tracker-slide {
+    /* 4k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #projects .exercise-tracker-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #projects .exercise-tracker-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: -webkit-image-set(url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #projects .exercise-tracker-slide {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 4k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #projects .exercise-tracker-slide {
+    /* 8k */
+    background-image: url("../img/Projects/exercisetracker/exercise-tracker-desktop-7680.webp");
+  }
+}
+#projects .pong-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Projects/pong/pong.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #projects .pong-slide {
+    /* 8k */
+    background-image: url("../img/Projects/pong/pong-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #projects .pong-slide {
+    /* 4k */
+    background-image: url("../img/Projects/pong/pong-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #projects .pong-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/pong/pong-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #projects .pong-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Projects/pong/pong-portrait-375.webp") 1x, url("../img/Projects/pong/pong-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-375.webp") 1x, url("../img/Projects/pong/pong-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: -webkit-image-set(url("../img/projects/pong/pong-portrait-480.webp") 1x, url("../img/projects/pong/pong-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/pong/pong-portrait-480.webp") 1x, url("../img/projects/pong/pong-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-480.webp") 1x, url("../img/Projects/pong/pong-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Projects/pong/pong-portrait-768.webp") 1x, url("../img/Projects/pong/pong-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-768.webp") 1x, url("../img/Projects/pong/pong-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #projects .pong-slide {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Projects/pong/pong-portrait-1280.webp") 1x, url("../img/Projects/pong/pong-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-1280.webp") 1x, url("../img/Projects/pong/pong-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #projects .pong-slide {
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-667.webp") 1x, url("../img/Projects/pong/pong-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-667.webp") 1x, url("../img/Projects/pong/pong-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #projects .pong-slide {
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-800.webp") 1x, url("../img/Projects/pong/pong-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-800.webp") 1x, url("../img/Projects/pong/pong-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Projects/pong/pong-desktop-1280.webp") 1x, url("../img/Projects/pong/pong-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-desktop-1280.webp") 1x, url("../img/Projects/pong/pong-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-1366.webp") 1x, url("../img/Projects/pong/pong-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-1366.webp") 1x, url("../img/Projects/pong/pong-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Projects/pong/pong-landscape-1707.webp") 1x, url("../img/Projects/pong/pong-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-landscape-1707.webp") 1x, url("../img/Projects/pong/pong-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/pong/pong-desktop-1920.webp") 1x, url("../img/Projects/pong/pong-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/pong/pong-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 4k */
+    background-image: url("../img/Projects/pong/pong-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Projects/pong/pong-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #projects .pong-slide {
+    /* 8k */
+    background-image: url("../img/Projects/pong/pong-desktop-7680.webp");
+  }
+}
+#projects .woodys-file-manager-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager.jpg");
+}
+@media only screen and (max-width: 7680px) {
+  #projects .woodys-file-manager-slide {
+    /* 8k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-7680.webp");
+  }
+}
+@media only screen and (max-height: 2160px) {
+  #projects .woodys-file-manager-slide {
+    /* 4k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp");
+  }
+}
+@media only screen and (max-height: 1440px) {
+  #projects .woodys-file-manager-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp");
+  }
+}
+@media only screen and (max-height: 1280px) {
+  #projects .woodys-file-manager-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-image: -webkit-image-set(url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
+    background-image: image-set(url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
+  #projects .woodys-file-manager-slide {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* big landscape tablets, laptops, and desktops */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* hi-res laptops and desktops */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* tablets landscape */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 1080p */
+    background-image: image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+    background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x);
+  }
+}
+@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 1440p */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp");
+  }
+}
+@media only screen and (min-width: 2561px) and (max-height: 2160px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 4k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp");
+  }
+}
+@media only screen and (min-width: 3841px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* Ultra-wide-screens */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-super-wide-5120.webp");
+  }
+}
+@media only screen and (max-width: 7680px) and (min-height: 4320px) and (orientation: landscape) {
+  #projects .woodys-file-manager-slide {
+    /* 8k */
+    background-image: url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-7680.webp");
+  }
+}
+#projects .content-container {
+  padding: 2rem;
+  background-color: rgba(1, 154, 171, 0.9);
+  border-radius: 1rem;
+}
+
+.form-text {
+  font-family: "notosanslepcha regular", sans-serif;
+}
+
+#github-website-link {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid var(--white-font);
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--white-font);
+}
+#github-website-link:hover {
+  border: 2px solid #243d51;
+  color: #243d51;
+}
+#github-website-link:hover .icon-github,
+#github-website-link:hover .icon-download {
+  background-color: #243d51;
+}
+#github-website-link .icon-github,
+#github-website-link .icon-download {
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-right: 1rem;
+}
+@media only screen and (max-height: 510px) and (orientation: landscape) {
+  #github-website-link {
+    height: 2.4rem;
+    font-size: 1.4rem;
+    padding: 0;
+  }
+  #github-website-link .icon-github,
+  #github-website-link .icon-download {
+    width: 2rem;
+    height: 2rem;
+  }
+}/*# sourceMappingURL=index.css.map */
