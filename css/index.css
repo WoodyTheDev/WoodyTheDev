@@ -40,7 +40,7 @@ body {
     page-break-after: always;
   }
   a,
-  a:visited {
+a:visited {
     text-decoration: underline;
   }
   @page {
@@ -48,14 +48,14 @@ body {
     margin: 0.5cm;
   }
   p,
-  h2,
-  h3 {
+h2,
+h3 {
     orphans: 3;
     widows: 3;
   }
   img,
-  canvas,
-  iframe {
+canvas,
+iframe {
     display: none !important;
   }
   #contact {
@@ -168,6 +168,24 @@ body {
   background-color: white;
   -webkit-mask: url("../img/icons/bing.svg") no-repeat center;
   mask: url("../img/icons/bing.svg") no-repeat center;
+}
+
+.icon-python {
+  background-color: white;
+  -webkit-mask: url("../img/icons/python.svg") no-repeat center;
+  mask: url("../img/icons/python.svg") no-repeat center;
+}
+
+.icon-react {
+  background-color: white;
+  -webkit-mask: url("../img/icons/react.svg") no-repeat center;
+  mask: url("../img/icons/react.svg") no-repeat center;
+}
+
+.icon-openai {
+  background-color: white;
+  -webkit-mask: url("../img/icons/openai-logomark.svg") no-repeat center;
+  mask: url("../img/icons/openai-logomark.svg") no-repeat center;
 }
 
 .icon-woody-the-dev {
@@ -294,6 +312,7 @@ main.scroll-snap-container {
 #home {
   height: 100vh;
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: -1;
@@ -672,7 +691,6 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row {
     height: 100%;
-    width: -moz-fit-content;
     width: fit-content;
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
@@ -684,7 +702,6 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
     opacity: 1;
-    width: -moz-fit-content;
     width: fit-content;
     margin-right: 1rem;
   }
@@ -710,7 +727,6 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row {
     height: 100%;
-    width: -moz-fit-content;
     width: fit-content;
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row:first-child {
@@ -726,7 +742,6 @@ main.scroll-snap-container {
   }
   .content .content-full-width .bulletpoints-container .bulletpoints-row .bullet {
     opacity: 1;
-    width: -moz-fit-content;
     width: fit-content;
     margin-right: 2rem;
     height: auto;
@@ -752,8 +767,7 @@ main.scroll-snap-container {
 .content .content-split-image .content-image {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   pointer-events: none;
 }
 .content .content-split-text {
@@ -889,21 +903,12 @@ main.scroll-snap-container {
   border: 1px solid #019aab;
   outline: 1px solid #019aab;
 }
-.content .content-split-form #email-form input::-moz-placeholder, .content .content-split-form #email-form textarea::-moz-placeholder {
-  color: var(--white-font);
-}
 .content .content-split-form #email-form input::placeholder,
 .content .content-split-form #email-form textarea::placeholder {
   color: var(--white-font);
 }
-.content .content-split-form #email-form input:hover::-moz-placeholder, .content .content-split-form #email-form textarea:hover::-moz-placeholder {
-  color: #019aab;
-}
 .content .content-split-form #email-form input:hover::placeholder,
 .content .content-split-form #email-form textarea:hover::placeholder {
-  color: #019aab;
-}
-.content .content-split-form #email-form input:focus::-moz-placeholder, .content .content-split-form #email-form textarea:focus::-moz-placeholder {
   color: #019aab;
 }
 .content .content-split-form #email-form input:focus::placeholder,
@@ -934,7 +939,7 @@ main.scroll-snap-container {
     resize: vertical;
   }
   .content .content-split-form #email-form input,
-  .content .content-split-form #email-form textarea {
+.content .content-split-form #email-form textarea {
     font-size: 1.4rem;
     padding: 0rem 0.6rem;
   }
@@ -950,48 +955,48 @@ main.scroll-snap-container {
 }
 @media only screen and (min-width: 481px) {
   .content .content-split-form .text-animation-1,
-  .content .content-split-form .text-animation-2,
-  .content .content-split-form .text-animation-3 {
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     top: 4rem;
   }
 }
 @media only screen and (min-width: 641px) {
   .content .content-split-form .text-animation-1,
-  .content .content-split-form .text-animation-2,
-  .content .content-split-form .text-animation-3 {
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     top: 4rem;
   }
 }
 @media only screen and (min-width: 961px) {
   .content .content-split-form .text-animation-1,
-  .content .content-split-form .text-animation-2,
-  .content .content-split-form .text-animation-3 {
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     top: 4.5rem;
   }
 }
 @media only screen and (min-width: 1025px) {
   .content .content-split-form .text-animation-1,
-  .content .content-split-form .text-animation-2,
-  .content .content-split-form .text-animation-3 {
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* big landscape tablets, laptops, and desktops */
     top: 4.5rem;
   }
 }
 @media only screen and (min-width: 1281px) {
   .content .content-split-form .text-animation-1,
-  .content .content-split-form .text-animation-2,
-  .content .content-split-form .text-animation-3 {
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     /* hi-res laptops and desktops */
     top: 4.8rem;
   }
 }
 @media only screen and (max-height: 510px) and (orientation: landscape) {
   .content .content-split-form .text-animation-1,
-  .content .content-split-form .text-animation-2,
-  .content .content-split-form .text-animation-3 {
+.content .content-split-form .text-animation-2,
+.content .content-split-form .text-animation-3 {
     top: 2.4rem;
   }
 }
@@ -1226,7 +1231,7 @@ main.scroll-snap-container {
     height: 200vh;
   }
   .content.content-split .content-split-image,
-  .content.content-split .content-split-chart {
+.content.content-split .content-split-chart {
     height: 50%;
     width: 100%;
   }
@@ -1410,7 +1415,6 @@ footer .scroll-snap {
 @media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
   #projects .private-work-slide {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    background-image: -webkit-image-set(url("../img/projects/projects/projects-portrait-480.webp") 1x, url("../img/projects/projects/projects-portrait-480-2x.webp") 2x);
     background-image: image-set(url("../img/projects/projects/projects-portrait-480.webp") 1x, url("../img/projects/projects/projects-portrait-480-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Projects/projects/projects-portrait-480.webp") 1x, url("../img/Projects/projects/projects-portrait-480-2x.webp") 2x);
   }
@@ -1534,7 +1538,6 @@ footer .scroll-snap {
 @media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
   #projects .exercise-tracker-slide {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    background-image: -webkit-image-set(url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
     background-image: image-set(url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x, url("../img/Projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x);
   }
@@ -1658,7 +1661,6 @@ footer .scroll-snap {
 @media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
   #projects .pong-slide {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    background-image: -webkit-image-set(url("../img/projects/pong/pong-portrait-480.webp") 1x, url("../img/projects/pong/pong-portrait-480-2x.webp") 2x);
     background-image: image-set(url("../img/projects/pong/pong-portrait-480.webp") 1x, url("../img/projects/pong/pong-portrait-480-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Projects/pong/pong-portrait-480.webp") 1x, url("../img/Projects/pong/pong-portrait-480-2x.webp") 2x);
   }
@@ -1782,7 +1784,6 @@ footer .scroll-snap {
 @media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
   #projects .woodys-file-manager-slide {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    background-image: -webkit-image-set(url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
     background-image: image-set(url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
     background-image: -webkit-image-set(url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x, url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x);
   }
@@ -1908,8 +1909,10 @@ footer .scroll-snap {
     padding: 0;
   }
   #github-website-link .icon-github,
-  #github-website-link .icon-download {
+#github-website-link .icon-download {
     width: 2rem;
     height: 2rem;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */

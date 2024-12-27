@@ -170,6 +170,12 @@ body {
   mask: url("../img/icons/bing.svg") no-repeat center;
 }
 
+.icon-python {
+  background-color: white;
+  -webkit-mask: url("../img/icons/python.svg") no-repeat center;
+  mask: url("../img/icons/python.svg") no-repeat center;
+}
+
 .icon-woody-the-dev {
   background-color: white;
   -webkit-mask: url("../img/icons/woody-the-dev.svg") no-repeat center;

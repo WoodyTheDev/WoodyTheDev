@@ -180,6 +180,25 @@ body {
 	mask: url("../img/icons/bing.svg") no-repeat center;
 }
 
+.icon-python {
+	background-color: white;
+	-webkit-mask: url("../img/icons/python.svg") no-repeat center;
+	mask: url("../img/icons/python.svg") no-repeat center;
+}
+
+.icon-react {
+	background-color: white;
+	-webkit-mask: url("../img/icons/react.svg") no-repeat center;
+	mask: url("../img/icons/react.svg") no-repeat center;
+}
+
+.icon-openai {
+	// width: 5rem;
+	background-color: white;
+	-webkit-mask: url("../img/icons/openai-logomark.svg") no-repeat center;
+	mask: url("../img/icons/openai-logomark.svg") no-repeat center;
+}
+
 .icon-woody-the-dev {
 	background-color: white;
 	-webkit-mask: url("../img/icons/woody-the-dev.svg") no-repeat center;
@@ -1553,121 +1572,165 @@ footer {
 		@media only screen and (max-height: 1280px) {
 			/* 1080p */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp")
+					2x
 			);
 		}
 
 		@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
 			/* smartphones, iPhone, portrait 480x320 phones */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-375-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
 			/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 			background-image: image-set(
-				url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x,
-				url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x
+				url("../img/projects/exercisetracker/exercise-tracker-portrait-480.webp")
+					1x,
+				url("../img/projects/exercisetracker/exercise-tracker-portrait-480-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-480.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-480-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-480.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-480-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
 			/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-768-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
 			/* tablet, landscape iPad, lo-res laptops ands desktops */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-portrait-1280-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-667-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-800-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
 			/* big landscape tablets, laptops, and desktops */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1280.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-2560.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
 			/* hi-res laptops and desktops */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1366-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
 			/* tablets landscape */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-landscape-1707-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
 			/* 1080p */
 			background-image: image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp") 1x,
-				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp") 2x
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-1920.webp")
+					1x,
+				url("../img/Projects/exercisetracker/exercise-tracker-desktop-3840.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
@@ -1865,121 +1928,165 @@ footer {
 		@media only screen and (max-height: 1280px) {
 			/* 1080p */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp")
+					2x
 			);
 		}
 
 		@media only screen and (max-width: 375px) and (max-height: 1280px) and (orientation: portrait) {
 			/* smartphones, iPhone, portrait 480x320 phones */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-375-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 376px) and (max-height: 800px) and (orientation: portrait) {
 			/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 			background-image: image-set(
-				url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x,
-				url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x
+				url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480.webp")
+					1x,
+				url("../img/projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-480-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 481px) and (max-height: 1366px) and (orientation: portrait) {
 			/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-768-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 769px) and (max-height: 1707px) and (orientation: portrait) {
 			/* tablet, landscape iPad, lo-res laptops ands desktops */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-portrait-1280-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 320px) and (max-height: 375px) and (orientation: landscape) {
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-667-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 668px) and (max-height: 480px) and (orientation: landscape) {
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-800-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 801px) and (max-height: 720px) and (orientation: landscape) {
 			/* big landscape tablets, laptops, and desktops */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1280.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-2560.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1281px) and (max-height: 768px) and (orientation: landscape) {
 			/* hi-res laptops and desktops */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1366-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1281px) and (max-height: 1280px) and (orientation: landscape) {
 			/* tablets landscape */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-landscape-1707-2x.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1708px) and (max-height: 1280px) and (orientation: landscape) {
 			/* 1080p */
 			background-image: image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp")
+					2x
 			);
 			background-image: -webkit-image-set(
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp") 1x,
-				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp") 2x
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-1920.webp")
+					1x,
+				url("../img/Projects/woodysfilemanager/woodys-file-manager-desktop-3840.webp")
+					2x
 			);
 		}
 		@media only screen and (min-width: 1921px) and (max-height: 1440px) and (orientation: landscape) {
